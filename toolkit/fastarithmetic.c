@@ -30,47 +30,52 @@ void sqac48_16_fast(register int16_t z[3], register int16_t x){
 
 /*
  * x² and accumulate in z
- *
+ * Tested and found working
  * */
-void sqac64_24_fast(uint64_t* z, int32_t x)
+void sqac64_24_fast(int64_t* z, int32_t x)
 {
-	//register uint64_t result;
-	//Make sure x is always positive
-	if(x < 0) x = -x;
-
 	__asm__ __volatile__(
-			"__MPY=0x130 \n"
-			"__OP2=0x138 \n"
-			"__RESLO=0x13a \n"
-			"__RESHI=0x13c \n"
+	"__MPY=0x130 \n"
+	"__OP2=0x138 \n"
+	"__RESLO=0x13a \n"
 
-			//xl * xl
-			" mov	%A[src], &__MPY \n"		// MOV xl to MPY
-			" mov	%A[src], &__OP2 \n"		// MOV xl to OP2 (Multiplication started)
-			" add	&__RESLO, %A[res] \n"	// Add result to *z
-			" addc	&__RESHI, %B[res] \n"
-			" adc	%C[res] \n"				//Need to let the carry go all the way
-			" adc	%D[res] \n"
+//    ; We need to do the multiply in 4 chunks. It isn't easy to
+//    ; do this with signed multiplies, so we take care of the signs first
+//    ; and then do 2 unsigned multiplies
 
-			// xl * xh + xl * xh
-			" mov	%B[src], &__OP2 \n"		// MOV xh to OP2 (Multiplication started)
-			" add	&__RESLO, %B[res] \n"
-			" addc	&__RESHI, %C[res] \n"
-			" adc	%D[res] \n"
+    " tst.w   %B[x] \n"
+    " jge     sqac64_24_1 \n"
+    //; The 24 bit x is negative
+    " inv.w   %B[x] \n"
+    " inv.w   %A[x] \n"
+    " add.w   #1,%A[x] \n"
+    " addc.w  #0,%B[x] \n"
+	"sqac64_24_1: \n"
+    " mov.w   %B[x],&__MPY \n"
+    " mov.w   %B[x],&__OP2 \n"
+    " mov.w   #__RESLO,R4 \n"
+    " add.w   @R4+,4(%[z]) \n"
+    " addc.w  @R4,6(%[z]) \n"
 
-			" add	&__RESLO, %B[res] \n"
-			" addc	&__RESHI, %C[res] \n"
-			" adc	%D[res] \n"
+    " mov.w   %A[x],&__MPY \n"
+    " mov.w   %A[x],&__OP2 \n"
+    " sub.w   #2,R4 \n"
+    " add.w   @R4+,0(%[z]) \n"
+    " addc.w  @R4,2(%[z]) \n"
+    " addc.w  #0,4(%[z]) \n"
+    " addc.w  #0,6(%[z]) \n"
 
-			//xh * xh
-			" mov	%B[src], &__MPY \n"
-			" mov	%B[src], &__OP2 \n"
-			" add	&__RESLO, %C[res] \n"
-			" addc	&__RESHI, %D[res] \n"
+    //; Note: It is this use of a shift which stops this routine being a full 32bit operation
+    " rla.w   %B[x] \n"
+    " mov.w   %B[x],&__OP2 \n"
+    " sub.w   #2,R4 \n"
+    " add.w   @R4+,2(%[z]) \n"
+    " addc.w  @R4,4(%[z]) \n"
+    " addc.w  #0,6(%[z]) \n"
 
-			: [res] "=m"(*z)	//Output Operands
-			: [src] "r"(x)		//Input Operands
-			: //Clobbers
+	: [z] "+r"(z)	//Output Operands
+	: [x] "r"(x)		//Input Operands
+	: "R4"	//Clobbers
 	);
 }
 

@@ -174,7 +174,7 @@ void metrology_print_status(){
 	uint16_t p_status;
 	volatile frequency_t frequency;
 
-	volatile int64_t P_active = 15234567890;
+	volatile int64_t P_active = 0;
 	uint64_t t_num;
 
 	p_status = status;
@@ -192,28 +192,16 @@ void metrology_print_status(){
 		dp = metrology.dp_set;
 
         frequency = evaluate_mains_frequency();
-//        P_active = *metrology.current.dot_prod[dp].P_active / metrology.current.dot_prod[dp].sample_count;
-//        P_active >>= 9;
-//        P_active = mul48_32_16_fast(P_active, 12826);
-
-        if(frequency > 4800 && frequency < 5200){
-        	GPIO_setOutputLowOnPin(GPIO_PORT_P2, GPIO_PIN1);	//Green
-        }
-        else{
-        	GPIO_setOutputHighOnPin(GPIO_PORT_P2, GPIO_PIN1);	//Green
-        }
-
-        //printf("P_active = %y\n", P_active);
-        //printf("Freq = %u\n", frequency);
-        //int b = *(int *)&a[0];
-//        t_num = *((uint64_t*) metrology.dot_prod[dp].V_sq);
-//        t_num &= 0xffffffffffff;
-
+        P_active = *metrology.current.dot_prod[dp].P_active / metrology.current.dot_prod[dp].sample_count;
+        P_active >>= 9;
+        P_active = mul48_32_16_fast(P_active, 12826);
 
         printf("Samples= %i\n", metrology.dot_prod[dp].sample_count);
-        printf("VRMS^2= %r\n", *((uint64_t*) metrology.dot_prod[dp].V_sq) & 0xffffffffffff);
-        printf("VSample= %i\n", metrology.last_V_sample);
-        //printf("IRMS^2= %r\n", metrology.current.dot_prod[dp].I_sq[0]);
+        printf("P_active = %r\n", P_active);
+        //printf("Freq = %u\n", frequency);
+        printf("VRMS^2= %r\n", *((uint64_t*) metrology.dot_prod[dp].V_sq) & 0xffffffffffff);	//Only 48bit
+        //printf("VSample= %i\n", metrology.last_V_sample);
+        printf("IRMS^2= %r\n", *((uint64_t*) metrology.current.dot_prod[dp].I_sq));
 
         memset(&metrology.dot_prod[dp], 0, sizeof(metrology.dot_prod[0]));
         memset(&metrology.current.dot_prod[dp], 0, sizeof(metrology.current.dot_prod[0]));
@@ -265,11 +253,6 @@ static __inline__ int per_sample_dsp(void)
 	*v_hist_wrt_ptr++ = V_corrected;
 	if(v_hist_wrt_ptr > v_hist_end) v_hist_wrt_ptr = v_hist_start;
 
-//	*phase_dot_products->V_sq = 0x0000;
-//	*sensor_dot_products->I_sq = 0x0000;
-//	*sensor_dot_products->P_active = 0x0000;
-//	phase_dot_products->V_sq[0] = 0xffff;
-//	phase_dot_products->V_sq[1] = 0xffff;
 	sqac48_16_fast(phase_dot_products->V_sq, V_sample);	//Accumulate and square product			8us
 	sqac64_24_fast(sensor_dot_products->I_sq, I_sample);//Accumulate and square product			12us
 	mac64_16_24_fast(sensor_dot_products->P_active, V_sample, I_sample);//						11us

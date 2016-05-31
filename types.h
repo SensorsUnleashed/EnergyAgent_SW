@@ -23,11 +23,7 @@ typedef int16_t current_dc_estimate_t[3];
           64 bit dot product accumulators for voltage*current
           64 bit dot product accumulators for current*current */
 typedef int16_t voltage_accum_t[3];
-//typedef int64_t current_accum_t[1];
-//typedef int64_t power_accum_t[1];
-
-//typedef uint64_t voltage_accum_t[1];
-typedef uint64_t current_accum_t[1];
+typedef int64_t current_accum_t[1];
 typedef int64_t power_accum_t[1];
 
 /* We store frequencies in 0.01Hz steps. A 16 bit unsigned number supports the range
