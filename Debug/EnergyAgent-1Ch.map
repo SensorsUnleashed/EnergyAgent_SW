@@ -1,7 +1,7 @@
 Archive member included because of file (symbol)
 
 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
-                              ./driverlib/eusci_a_spi.o (__mspabi_divlu)
+                              ./metrology-background.o (__mspabi_divli)
 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(epilogue.o)
                               ./driverlib/sd24.o (__mspabi_func_epilog_7)
 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(slli.o)
@@ -10,6 +10,10 @@ Archive member included because of file (symbol)
                               ./printf.o (__mspabi_srai_12)
 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srli.o)
                               /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o (__mspabi_srli_15)
+/home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                              ./metrology-background.o (__mulhi2)
+/home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+                              ./metrology-background.o (memset)
 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
                               /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o (__crt0_init_bss)
 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
@@ -18,18 +22,20 @@ Archive member included because of file (symbol)
                               /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o (__crt0_call_init_then_main)
 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
                               /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o) (memmove)
-/home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
-                              /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o) (memset)
 
 Allokerer fælles symboler
 Fælles symbol       størrelse         fil
 
-Ch0results          0x2               ./metrology-background.o
-Ch1results          0x2               ./metrology-background.o
-Ch2results          0x2               ./metrology-background.o
+metrology           0x84              ./metrology-background.o
+v_hist              0x14a             ./metrology-background.o
+status              0x2               ./metrology-background.o
 
 Discarded input sections
 
+ .group         0x00000000        0x8 ./toolkit/fastarithmetic.o
+ .group         0x00000000        0x8 ./toolkit/fastarithmetic.o
+ .group         0x00000000        0x8 ./toolkit/fastarithmetic.o
+ .group         0x00000000        0x8 ./toolkit/fastarithmetic.o
  .group         0x00000000        0x8 ./driverlib/cs.o
  .group         0x00000000        0x8 ./driverlib/cs.o
  .group         0x00000000        0x8 ./driverlib/cs.o
@@ -49,6 +55,10 @@ Discarded input sections
  .group         0x00000000        0x8 ./driverlib/cs.o
  .group         0x00000000        0x8 ./driverlib/cs.o
  .group         0x00000000        0x8 ./driverlib/cs.o
+ .debug_macro   0x00000000      0x4f6 ./driverlib/cs.o
+ .debug_macro   0x00000000       0x16 ./driverlib/cs.o
+ .debug_macro   0x00000000       0x44 ./driverlib/cs.o
+ .debug_macro   0x00000000      0x209 ./driverlib/cs.o
  .group         0x00000000        0x8 ./driverlib/eusci_a_spi.o
  .group         0x00000000        0x8 ./driverlib/eusci_a_spi.o
  .group         0x00000000        0x8 ./driverlib/eusci_a_spi.o
@@ -613,6 +623,7 @@ Discarded input sections
  .group         0x00000000        0x8 ./main.o
  .group         0x00000000        0x8 ./main.o
  .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
  .debug_macro   0x00000000      0x4f6 ./main.o
  .debug_macro   0x00000000       0x10 ./main.o
  .debug_macro   0x00000000       0x16 ./main.o
@@ -669,7 +680,24 @@ Discarded input sections
  .group         0x00000000        0x8 ./metrology-background.o
  .group         0x00000000        0x8 ./metrology-background.o
  .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
+ .group         0x00000000        0x8 ./metrology-background.o
  .debug_macro   0x00000000      0x4f6 ./metrology-background.o
+ .debug_macro   0x00000000       0x10 ./metrology-background.o
  .debug_macro   0x00000000       0x10 ./metrology-background.o
  .debug_macro   0x00000000       0x16 ./metrology-background.o
  .debug_macro   0x00000000       0x58 ./metrology-background.o
@@ -696,6 +724,10 @@ Discarded input sections
  .debug_macro   0x00000000      0x175 ./metrology-background.o
  .debug_macro   0x00000000       0x82 ./metrology-background.o
  .debug_macro   0x00000000       0x2e ./metrology-background.o
+ .debug_macro   0x00000000       0x4c ./metrology-background.o
+ .debug_macro   0x00000000       0x12 ./metrology-background.o
+ .debug_macro   0x00000000       0x43 ./metrology-background.o
+ .debug_macro   0x00000000       0xa3 ./metrology-background.o
  .debug_macro   0x00000000       0x58 ./metrology-background.o
  .group         0x00000000        0x8 ./printf.o
  .group         0x00000000        0x8 ./printf.o
@@ -734,6 +766,7 @@ Lænkerskript og hukommelsestabel
 
 LOAD /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
 LOAD /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
+LOAD ./toolkit/fastarithmetic.o
 LOAD ./driverlib/cs.o
 LOAD ./driverlib/eusci_a_spi.o
 LOAD ./driverlib/eusci_a_uart.o
@@ -829,446 +862,494 @@ __reset_vector  0x0000fffe        0x2
  *(.resetvec)
  .resetvec      0x0000fffe        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
 
-.rodata         0x00008000       0x98
+.rodata         0x00008000       0xdc
                 0x00008000                . = ALIGN (0x2)
  *(.plt)
  *(.rodata .rodata.* .gnu.linkonce.r.* .const .const:*)
  .rodata        0x00008000       0x1c ./driverlib/gpio.o
- .rodata        0x0000801c       0x33 ./metrology-background.o
- *fill*         0x0000804f        0x1 
- .rodata        0x00008050       0x38 ./printf.o
+ .rodata        0x0000801c       0x26 ./metrology-background.o
+ .rodata        0x00008042       0x88 ./printf.o
  *(.rodata1)
  *(.eh_frame_hdr)
  *(.eh_frame)
- .eh_frame      0x00008088        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
- .eh_frame      0x00008088        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
+ *fill*         0x000080ca        0x2 
+ .eh_frame      0x000080cc        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
+ .eh_frame      0x000080cc        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
  *(.gcc_except_table)
  *(.gcc_except_table.*)
-                0x0000808c                PROVIDE (__preinit_array_start, .)
+                0x000080d0                PROVIDE (__preinit_array_start, .)
  *(.preinit_array)
-                0x0000808c                PROVIDE (__preinit_array_end, .)
-                0x0000808c                PROVIDE (__init_array_start, .)
+                0x000080d0                PROVIDE (__preinit_array_end, .)
+                0x000080d0                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x0000808c                PROVIDE (__init_array_end, .)
-                0x0000808c                PROVIDE (__fini_array_start, .)
+                0x000080d0                PROVIDE (__init_array_end, .)
+                0x000080d0                PROVIDE (__fini_array_start, .)
  *(.fini_array)
  *(SORT(.fini_array.*))
-                0x0000808c                PROVIDE (__fini_array_end, .)
-                0x0000808c        0x4 LONG 0x0
+                0x000080d0                PROVIDE (__fini_array_end, .)
+                0x000080d0        0x4 LONG 0x0
  *crtbegin*.o(.ctors)
- .ctors         0x00008090        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
+ .ctors         0x000080d4        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
  *(EXCLUDE_FILE(*crtend*.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
- .ctors         0x00008092        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
+ .ctors         0x000080d6        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
  *crtbegin*.o(.dtors)
- .dtors         0x00008094        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
+ .dtors         0x000080d8        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
  *(EXCLUDE_FILE(*crtend*.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
- .dtors         0x00008096        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
-                0x00008096                __DTOR_END__
+ .dtors         0x000080da        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
+                0x000080da                __DTOR_END__
 
-.text           0x00008098     0x3f7a
-                0x00008098                . = ALIGN (0x2)
-                0x00008098                PROVIDE (_start, .)
+.text           0x000080dc     0x4b30
+                0x000080dc                . = ALIGN (0x2)
+                0x000080dc                PROVIDE (_start, .)
  *(SORT(.crt_*))
  .crt_0000start
-                0x00008098        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
-                0x00008098                __crt0_start
+                0x000080dc        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
+                0x000080dc                __crt0_start
  .crt_0100init_bss
-                0x0000809c        0xe /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
-                0x0000809c                __crt0_init_bss
+                0x000080e0        0xe /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+                0x000080e0                __crt0_init_bss
  .crt_0300movedata
-                0x000080aa       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
-                0x000080aa                __crt0_movedata
+                0x000080ee       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+                0x000080ee                __crt0_movedata
  .crt_0700call_init_then_main
-                0x000080be        0xa /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
-                0x000080be                __crt0_call_init_then_main
+                0x00008102        0xa /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+                0x00008102                __crt0_call_init_then_main
  .crt_0900main_init
-                0x000080c8       0x3c /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
-                0x000080c8                _msp430_run_init_array
-                0x000080d6                _msp430_run_preinit_array
-                0x000080e4                _msp430_run_fini_array
+                0x0000810c       0x3c /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
+                0x0000810c                _msp430_run_init_array
+                0x0000811a                _msp430_run_preinit_array
+                0x00008128                _msp430_run_fini_array
  *(.lowtext .text .stub .text.* .gnu.linkonce.t.* .text:*)
- .text          0x00008104        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
- .text          0x00008104       0xcc /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
- .text          0x000081d0      0x13a ./driverlib/cs.o
-                0x000081d0                CS_setupDCO
-                0x00008232                CS_initClockSignal
-                0x00008292                CS_getACLK
-                0x0000829a                CS_getSMCLK
-                0x000082c8                CS_getMCLK
-                0x000082f4                CS_getFaultFlagStatus
- .text          0x0000830a      0x34c ./driverlib/eusci_a_spi.o
-                0x0000830a                EUSCI_A_SPI_initMaster
-                0x000083c6                EUSCI_A_SPI_select4PinFunctionality
-                0x000083f8                EUSCI_A_SPI_changeMasterClock
-                0x0000844e                EUSCI_A_SPI_initSlave
-                0x000084ae                EUSCI_A_SPI_changeClockPhasePolarity
-                0x0000850c                EUSCI_A_SPI_transmitData
-                0x0000852a                EUSCI_A_SPI_receiveData
-                0x00008540                EUSCI_A_SPI_enableInterrupt
-                0x0000856a                EUSCI_A_SPI_disableInterrupt
-                0x00008596                EUSCI_A_SPI_getInterruptStatus
-                0x000085ba                EUSCI_A_SPI_clearInterrupt
-                0x000085e6                EUSCI_A_SPI_enable
-                0x000085fc                EUSCI_A_SPI_disable
-                0x00008612                EUSCI_A_SPI_getReceiveBufferAddress
-                0x0000862a                EUSCI_A_SPI_getTransmitBufferAddress
-                0x00008642                EUSCI_A_SPI_isBusy
- .text          0x00008656      0x488 ./driverlib/eusci_a_uart.o
-                0x00008656                EUSCI_A_UART_init
-                0x000087f4                EUSCI_A_UART_transmitData
-                0x00008834                EUSCI_A_UART_receiveData
-                0x00008868                EUSCI_A_UART_enableInterrupt
-                0x000088c2                EUSCI_A_UART_disableInterrupt
-                0x00008920                EUSCI_A_UART_getInterruptStatus
-                0x00008944                EUSCI_A_UART_clearInterrupt
-                0x00008970                EUSCI_A_UART_enable
-                0x00008986                EUSCI_A_UART_disable
-                0x0000899c                EUSCI_A_UART_queryStatusFlags
-                0x000089c0                EUSCI_A_UART_setDormant
-                0x000089d6                EUSCI_A_UART_resetDormant
-                0x000089ec                EUSCI_A_UART_transmitAddress
-                0x00008a1a                EUSCI_A_UART_transmitBreak
-                0x00008a76                EUSCI_A_UART_getReceiveBufferAddress
-                0x00008a8e                EUSCI_A_UART_getTransmitBufferAddress
-                0x00008aa6                EUSCI_A_UART_selectDeglitchTime
- .text          0x00008ade      0xa82 ./driverlib/eusci_b_i2c.o
-                0x00008ade                EUSCI_B_I2C_initMaster
-                0x00008b8c                EUSCI_B_I2C_initSlave
-                0x00008bf4                EUSCI_B_I2C_enable
-                0x00008c0a                EUSCI_B_I2C_disable
-                0x00008c20                EUSCI_B_I2C_setSlaveAddress
-                0x00008c3e                EUSCI_B_I2C_setMode
-                0x00008c72                EUSCI_B_I2C_getMode
-                0x00008c8c                EUSCI_B_I2C_slavePutData
-                0x00008caa                EUSCI_B_I2C_slaveGetData
-                0x00008cc0                EUSCI_B_I2C_isBusBusy
-                0x00008cd4                EUSCI_B_I2C_masterIsStopSent
-                0x00008ce4                EUSCI_B_I2C_masterIsStartSent
-                0x00008cf4                EUSCI_B_I2C_enableInterrupt
-                0x00008d1a                EUSCI_B_I2C_disableInterrupt
-                0x00008d44                EUSCI_B_I2C_clearInterrupt
-                0x00008d6e                EUSCI_B_I2C_getInterruptStatus
-                0x00008d88                EUSCI_B_I2C_masterSendSingleByte
-                0x00008e4c                EUSCI_B_I2C_masterReceiveSingleByte
-                0x00008e8e                EUSCI_B_I2C_masterSendSingleByteWithTimeout
-                0x00008fae                EUSCI_B_I2C_masterSendMultiByteStart
-                0x00009038                EUSCI_B_I2C_masterSendMultiByteStartWithTimeout
-                0x000090ee                EUSCI_B_I2C_masterSendMultiByteNext
-                0x0000912e                EUSCI_B_I2C_masterSendMultiByteNextWithTimeout
-                0x0000919a                EUSCI_B_I2C_masterSendMultiByteFinish
-                0x000091fc                EUSCI_B_I2C_masterSendMultiByteFinishWithTimeout
-                0x000092be                EUSCI_B_I2C_masterSendStart
-                0x000092d4                EUSCI_B_I2C_masterSendMultiByteStop
-                0x00009308                EUSCI_B_I2C_masterSendMultiByteStopWithTimeout
-                0x00009374                EUSCI_B_I2C_masterReceiveStart
-                0x00009398                EUSCI_B_I2C_masterReceiveMultiByteNext
-                0x000093ae                EUSCI_B_I2C_masterReceiveMultiByteFinish
-                0x000093ee                EUSCI_B_I2C_masterReceiveMultiByteFinishWithTimeout
-                0x0000949e                EUSCI_B_I2C_masterReceiveMultiByteStop
-                0x000094b4                EUSCI_B_I2C_enableMultiMasterMode
-                0x000094d8                EUSCI_B_I2C_disableMultiMasterMode
-                0x000094fc                EUSCI_B_I2C_masterReceiveSingle
-                0x00009530                EUSCI_B_I2C_getReceiveBufferAddress
-                0x00009548                EUSCI_B_I2C_getTransmitBufferAddress
- .text          0x00009560      0x340 ./driverlib/eusci_b_spi.o
-                0x00009560                EUSCI_B_SPI_initMaster
-                0x00009612                EUSCI_B_SPI_select4PinFunctionality
-                0x00009644                EUSCI_B_SPI_changeMasterClock
-                0x0000969a                EUSCI_B_SPI_initSlave
-                0x000096fa                EUSCI_B_SPI_changeClockPhasePolarity
-                0x00009758                EUSCI_B_SPI_transmitData
-                0x00009776                EUSCI_B_SPI_receiveData
-                0x0000978c                EUSCI_B_SPI_enableInterrupt
-                0x000097b6                EUSCI_B_SPI_disableInterrupt
-                0x000097e2                EUSCI_B_SPI_getInterruptStatus
-                0x00009806                EUSCI_B_SPI_clearInterrupt
-                0x00009832                EUSCI_B_SPI_enable
-                0x00009848                EUSCI_B_SPI_disable
-                0x0000985e                EUSCI_B_SPI_getReceiveBufferAddress
-                0x00009876                EUSCI_B_SPI_getTransmitBufferAddress
-                0x0000988e                EUSCI_B_SPI_isBusy
- .text          0x000098a0      0x42a ./driverlib/flashctl.o
-                0x000098a0                FlashCtl_eraseSegment
-                0x000098e6                FlashCtl_performMassErase
-                0x0000993a                FlashCtl_performEraseCheck
-                0x0000997c                FlashCtl_write8
-                0x000099fa                FlashCtl_write16
-                0x00009a78                FlashCtl_write32
-                0x00009b2e                FlashCtl_fillMemory32
-                0x00009be6                FlashCtl_getStatus
-                0x00009bfe                FlashCtl_lockInfo
-                0x00009c36                FlashCtl_unlockInfo
-                0x00009c6a                FlashCtl_setupClock
- .text          0x00009cca      0x650 ./driverlib/gpio.o
-                0x00009cca                GPIO_setAsOutputPin
-                0x00009d56                GPIO_setAsInputPin
-                0x00009de4                GPIO_setAsPeripheralModuleFunctionOutputPin
-                0x00009eee                GPIO_setAsPeripheralModuleFunctionInputPin
-                0x00009ffc                GPIO_setOutputHighOnPin
-                0x0000a04e                GPIO_setOutputLowOnPin
-                0x0000a0a4                GPIO_toggleOutputOnPin
-                0x0000a0f6                GPIO_getInputPinValue
-                0x0000a14c                GPIO_enableInterrupt
-                0x0000a1a2                GPIO_disableInterrupt
-                0x0000a1fc                GPIO_getInterruptStatus
-                0x0000a240                GPIO_clearInterrupt
-                0x0000a29a                GPIO_selectInterruptEdge
- .text          0x0000a31a       0xa2 ./driverlib/mpy.o
-                0x0000a31a                MPY_setOperandOne8Bit
-                0x0000a334                MPY_setOperandOne16Bit
-                0x0000a34e                MPY_setOperandTwo8Bit
-                0x0000a362                MPY_setOperandTwo16Bit
-                0x0000a374                MPY_getResult
-                0x0000a3b4                MPY_getSumExtension
- .text          0x0000a3bc      0x126 ./driverlib/pmm.o
-                0x0000a3bc                PMM_setupVoltageMonitor
-                0x0000a3de                PMM_calibrateReference
-                0x0000a3f4                PMM_setRegulatorStatus
-                0x0000a416                PMM_unlockIOConfiguration
-                0x0000a426                PMM_enableInterrupt
-                0x0000a440                PMM_disableInterrupt
-                0x0000a468                PMM_getInterruptStatus
-                0x0000a4ba                PMM_clearInterrupt
- .text          0x0000a4e2      0x778 ./driverlib/sd24.o
-                0x0000a4e2                SD24_init
-                0x0000a546                SD24_initConverter
-                0x0000a58e                SD24_initConverterAdvanced
-                0x0000a64a                SD24_setConverterDataFormat
-                0x0000a692                SD24_startConverterConversion
-                0x0000a6c8                SD24_stopConverterConversion
-                0x0000a6fe                SD24_setInputChannel
-                0x0000a74c                SD24_setInterruptDelay
-                0x0000a794                SD24_setOversampling
-                0x0000a7dc                SD24_setGain
-                0x0000a82a                SD24_getResults
-                0x0000aac6                SD24_getHighWordResults
-                0x0000ab1c                SD24_enableInterrupt
-                0x0000ab8e                SD24_disableInterrupt
-                0x0000abee                SD24_clearInterrupt
-                0x0000ac28                SD24_getInterruptStatus
- .text          0x0000ac5a       0x86 ./driverlib/sfr.o
-                0x0000ac5a                SFR_enableInterrupt
-                0x0000ac76                SFR_disableInterrupt
-                0x0000aca0                SFR_getInterruptStatus
-                0x0000acb6                SFR_clearInterrupt
- .text          0x0000ace0      0x698 ./driverlib/timer_a.o
-                0x0000ace0                Timer_A_startCounter
-                0x0000acfe                Timer_A_initContinuousMode
-                0x0000ad80                Timer_A_initUpMode
-                0x0000ae50                Timer_A_initUpDownMode
-                0x0000af20                Timer_A_initCaptureMode
-                0x0000afa0                Timer_A_initCompareMode
-                0x0000b01e                Timer_A_enableInterrupt
-                0x0000b034                Timer_A_disableInterrupt
-                0x0000b04a                Timer_A_getInterruptStatus
-                0x0000b06c                Timer_A_enableCaptureCompareInterrupt
-                0x0000b090                Timer_A_disableCaptureCompareInterrupt
-                0x0000b0b4                Timer_A_getCaptureCompareInterruptStatus
-                0x0000b0e2                Timer_A_clear
-                0x0000b0f8                Timer_A_getSynchronizedCaptureCompareInput
-                0x0000b126                Timer_A_getOutputForOutputModeOutBitValue
-                0x0000b14a                Timer_A_getCaptureCompareCount
-                0x0000b164                Timer_A_setOutputForOutputModeOutBitValue
-                0x0000b1ae                Timer_A_outputPWM
-                0x0000b268                Timer_A_stop
-                0x0000b280                Timer_A_setCompareValue
-                0x0000b2a6                Timer_A_setOutputMode
-                0x0000b2da                Timer_A_clearTimerInterrupt
-                0x0000b2f0                Timer_A_clearCaptureCompareInterrupt
-                0x0000b312                Timer_A_getCounterValue
- .text          0x0000b378       0xac ./driverlib/tlv.o
-                0x0000b378                TLV_getInfo
-                0x0000b3cc                TLV_performChecksumCheck
- .text          0x0000b424       0xcc ./driverlib/wdt.o
-                0x0000b424                WDT_hold
-                0x0000b44e                WDT_start
-                0x0000b478                WDT_resetTimer
-                0x0000b4a0                WDT_initWatchdogTimer
-                0x0000b4c8                WDT_initIntervalTimer
- .text          0x0000b4f0      0x18a ./communication.o
-                0x0000b4f0                fifo_add
-                0x0000b544                fifo_get
-                0x0000b594                fifo_getavilable
-                0x0000b5a0                puts
-                0x0000b5ca                putc
-                0x0000b5dc                USCI_A0_ISR
- .text          0x0000b67a      0x206 ./main.o
-                0x0000b72a                uart_setup
-                0x0000b79e                adc_setup
-                0x0000b844                main
- .text          0x0000b880      0x138 ./metrology-background.o
-                0x0000b880                metrology_start
-                0x0000b89a                metrology_print_status
-                0x0000b8f2                SD24_ISR
- .text          0x0000b9b8      0x290 ./printf.o
-                0x0000ba88                printf
- .text          0x0000bc48        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+ .text          0x00008148        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
+ .text          0x00008148       0xcc /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
+ .text          0x00008214      0x2e4 ./toolkit/fastarithmetic.o
+                0x00008214                sqac48_16_fast
+                0x00008232                sqac64_24_fast
+                0x000082c2                mac64_16_24_fast
+                0x00008364                mul48_32_16_fast
+                0x000083fc                mul32
+                0x00008494                dc_filter
+ .text          0x000084f8      0x13a ./driverlib/cs.o
+                0x000084f8                CS_setupDCO
+                0x0000855a                CS_initClockSignal
+                0x000085ba                CS_getACLK
+                0x000085c2                CS_getSMCLK
+                0x000085f0                CS_getMCLK
+                0x0000861c                CS_getFaultFlagStatus
+ .text          0x00008632      0x34c ./driverlib/eusci_a_spi.o
+                0x00008632                EUSCI_A_SPI_initMaster
+                0x000086ee                EUSCI_A_SPI_select4PinFunctionality
+                0x00008720                EUSCI_A_SPI_changeMasterClock
+                0x00008776                EUSCI_A_SPI_initSlave
+                0x000087d6                EUSCI_A_SPI_changeClockPhasePolarity
+                0x00008834                EUSCI_A_SPI_transmitData
+                0x00008852                EUSCI_A_SPI_receiveData
+                0x00008868                EUSCI_A_SPI_enableInterrupt
+                0x00008892                EUSCI_A_SPI_disableInterrupt
+                0x000088be                EUSCI_A_SPI_getInterruptStatus
+                0x000088e2                EUSCI_A_SPI_clearInterrupt
+                0x0000890e                EUSCI_A_SPI_enable
+                0x00008924                EUSCI_A_SPI_disable
+                0x0000893a                EUSCI_A_SPI_getReceiveBufferAddress
+                0x00008952                EUSCI_A_SPI_getTransmitBufferAddress
+                0x0000896a                EUSCI_A_SPI_isBusy
+ .text          0x0000897e      0x488 ./driverlib/eusci_a_uart.o
+                0x0000897e                EUSCI_A_UART_init
+                0x00008b1c                EUSCI_A_UART_transmitData
+                0x00008b5c                EUSCI_A_UART_receiveData
+                0x00008b90                EUSCI_A_UART_enableInterrupt
+                0x00008bea                EUSCI_A_UART_disableInterrupt
+                0x00008c48                EUSCI_A_UART_getInterruptStatus
+                0x00008c6c                EUSCI_A_UART_clearInterrupt
+                0x00008c98                EUSCI_A_UART_enable
+                0x00008cae                EUSCI_A_UART_disable
+                0x00008cc4                EUSCI_A_UART_queryStatusFlags
+                0x00008ce8                EUSCI_A_UART_setDormant
+                0x00008cfe                EUSCI_A_UART_resetDormant
+                0x00008d14                EUSCI_A_UART_transmitAddress
+                0x00008d42                EUSCI_A_UART_transmitBreak
+                0x00008d9e                EUSCI_A_UART_getReceiveBufferAddress
+                0x00008db6                EUSCI_A_UART_getTransmitBufferAddress
+                0x00008dce                EUSCI_A_UART_selectDeglitchTime
+ .text          0x00008e06      0xa82 ./driverlib/eusci_b_i2c.o
+                0x00008e06                EUSCI_B_I2C_initMaster
+                0x00008eb4                EUSCI_B_I2C_initSlave
+                0x00008f1c                EUSCI_B_I2C_enable
+                0x00008f32                EUSCI_B_I2C_disable
+                0x00008f48                EUSCI_B_I2C_setSlaveAddress
+                0x00008f66                EUSCI_B_I2C_setMode
+                0x00008f9a                EUSCI_B_I2C_getMode
+                0x00008fb4                EUSCI_B_I2C_slavePutData
+                0x00008fd2                EUSCI_B_I2C_slaveGetData
+                0x00008fe8                EUSCI_B_I2C_isBusBusy
+                0x00008ffc                EUSCI_B_I2C_masterIsStopSent
+                0x0000900c                EUSCI_B_I2C_masterIsStartSent
+                0x0000901c                EUSCI_B_I2C_enableInterrupt
+                0x00009042                EUSCI_B_I2C_disableInterrupt
+                0x0000906c                EUSCI_B_I2C_clearInterrupt
+                0x00009096                EUSCI_B_I2C_getInterruptStatus
+                0x000090b0                EUSCI_B_I2C_masterSendSingleByte
+                0x00009174                EUSCI_B_I2C_masterReceiveSingleByte
+                0x000091b6                EUSCI_B_I2C_masterSendSingleByteWithTimeout
+                0x000092d6                EUSCI_B_I2C_masterSendMultiByteStart
+                0x00009360                EUSCI_B_I2C_masterSendMultiByteStartWithTimeout
+                0x00009416                EUSCI_B_I2C_masterSendMultiByteNext
+                0x00009456                EUSCI_B_I2C_masterSendMultiByteNextWithTimeout
+                0x000094c2                EUSCI_B_I2C_masterSendMultiByteFinish
+                0x00009524                EUSCI_B_I2C_masterSendMultiByteFinishWithTimeout
+                0x000095e6                EUSCI_B_I2C_masterSendStart
+                0x000095fc                EUSCI_B_I2C_masterSendMultiByteStop
+                0x00009630                EUSCI_B_I2C_masterSendMultiByteStopWithTimeout
+                0x0000969c                EUSCI_B_I2C_masterReceiveStart
+                0x000096c0                EUSCI_B_I2C_masterReceiveMultiByteNext
+                0x000096d6                EUSCI_B_I2C_masterReceiveMultiByteFinish
+                0x00009716                EUSCI_B_I2C_masterReceiveMultiByteFinishWithTimeout
+                0x000097c6                EUSCI_B_I2C_masterReceiveMultiByteStop
+                0x000097dc                EUSCI_B_I2C_enableMultiMasterMode
+                0x00009800                EUSCI_B_I2C_disableMultiMasterMode
+                0x00009824                EUSCI_B_I2C_masterReceiveSingle
+                0x00009858                EUSCI_B_I2C_getReceiveBufferAddress
+                0x00009870                EUSCI_B_I2C_getTransmitBufferAddress
+ .text          0x00009888      0x340 ./driverlib/eusci_b_spi.o
+                0x00009888                EUSCI_B_SPI_initMaster
+                0x0000993a                EUSCI_B_SPI_select4PinFunctionality
+                0x0000996c                EUSCI_B_SPI_changeMasterClock
+                0x000099c2                EUSCI_B_SPI_initSlave
+                0x00009a22                EUSCI_B_SPI_changeClockPhasePolarity
+                0x00009a80                EUSCI_B_SPI_transmitData
+                0x00009a9e                EUSCI_B_SPI_receiveData
+                0x00009ab4                EUSCI_B_SPI_enableInterrupt
+                0x00009ade                EUSCI_B_SPI_disableInterrupt
+                0x00009b0a                EUSCI_B_SPI_getInterruptStatus
+                0x00009b2e                EUSCI_B_SPI_clearInterrupt
+                0x00009b5a                EUSCI_B_SPI_enable
+                0x00009b70                EUSCI_B_SPI_disable
+                0x00009b86                EUSCI_B_SPI_getReceiveBufferAddress
+                0x00009b9e                EUSCI_B_SPI_getTransmitBufferAddress
+                0x00009bb6                EUSCI_B_SPI_isBusy
+ .text          0x00009bc8      0x42a ./driverlib/flashctl.o
+                0x00009bc8                FlashCtl_eraseSegment
+                0x00009c0e                FlashCtl_performMassErase
+                0x00009c62                FlashCtl_performEraseCheck
+                0x00009ca4                FlashCtl_write8
+                0x00009d22                FlashCtl_write16
+                0x00009da0                FlashCtl_write32
+                0x00009e56                FlashCtl_fillMemory32
+                0x00009f0e                FlashCtl_getStatus
+                0x00009f26                FlashCtl_lockInfo
+                0x00009f5e                FlashCtl_unlockInfo
+                0x00009f92                FlashCtl_setupClock
+ .text          0x00009ff2      0x650 ./driverlib/gpio.o
+                0x00009ff2                GPIO_setAsOutputPin
+                0x0000a07e                GPIO_setAsInputPin
+                0x0000a10c                GPIO_setAsPeripheralModuleFunctionOutputPin
+                0x0000a216                GPIO_setAsPeripheralModuleFunctionInputPin
+                0x0000a324                GPIO_setOutputHighOnPin
+                0x0000a376                GPIO_setOutputLowOnPin
+                0x0000a3cc                GPIO_toggleOutputOnPin
+                0x0000a41e                GPIO_getInputPinValue
+                0x0000a474                GPIO_enableInterrupt
+                0x0000a4ca                GPIO_disableInterrupt
+                0x0000a524                GPIO_getInterruptStatus
+                0x0000a568                GPIO_clearInterrupt
+                0x0000a5c2                GPIO_selectInterruptEdge
+ .text          0x0000a642       0xa2 ./driverlib/mpy.o
+                0x0000a642                MPY_setOperandOne8Bit
+                0x0000a65c                MPY_setOperandOne16Bit
+                0x0000a676                MPY_setOperandTwo8Bit
+                0x0000a68a                MPY_setOperandTwo16Bit
+                0x0000a69c                MPY_getResult
+                0x0000a6dc                MPY_getSumExtension
+ .text          0x0000a6e4      0x126 ./driverlib/pmm.o
+                0x0000a6e4                PMM_setupVoltageMonitor
+                0x0000a706                PMM_calibrateReference
+                0x0000a71c                PMM_setRegulatorStatus
+                0x0000a73e                PMM_unlockIOConfiguration
+                0x0000a74e                PMM_enableInterrupt
+                0x0000a768                PMM_disableInterrupt
+                0x0000a790                PMM_getInterruptStatus
+                0x0000a7e2                PMM_clearInterrupt
+ .text          0x0000a80a      0x778 ./driverlib/sd24.o
+                0x0000a80a                SD24_init
+                0x0000a86e                SD24_initConverter
+                0x0000a8b6                SD24_initConverterAdvanced
+                0x0000a972                SD24_setConverterDataFormat
+                0x0000a9ba                SD24_startConverterConversion
+                0x0000a9f0                SD24_stopConverterConversion
+                0x0000aa26                SD24_setInputChannel
+                0x0000aa74                SD24_setInterruptDelay
+                0x0000aabc                SD24_setOversampling
+                0x0000ab04                SD24_setGain
+                0x0000ab52                SD24_getResults
+                0x0000adee                SD24_getHighWordResults
+                0x0000ae44                SD24_enableInterrupt
+                0x0000aeb6                SD24_disableInterrupt
+                0x0000af16                SD24_clearInterrupt
+                0x0000af50                SD24_getInterruptStatus
+ .text          0x0000af82       0x86 ./driverlib/sfr.o
+                0x0000af82                SFR_enableInterrupt
+                0x0000af9e                SFR_disableInterrupt
+                0x0000afc8                SFR_getInterruptStatus
+                0x0000afde                SFR_clearInterrupt
+ .text          0x0000b008      0x698 ./driverlib/timer_a.o
+                0x0000b008                Timer_A_startCounter
+                0x0000b026                Timer_A_initContinuousMode
+                0x0000b0a8                Timer_A_initUpMode
+                0x0000b178                Timer_A_initUpDownMode
+                0x0000b248                Timer_A_initCaptureMode
+                0x0000b2c8                Timer_A_initCompareMode
+                0x0000b346                Timer_A_enableInterrupt
+                0x0000b35c                Timer_A_disableInterrupt
+                0x0000b372                Timer_A_getInterruptStatus
+                0x0000b394                Timer_A_enableCaptureCompareInterrupt
+                0x0000b3b8                Timer_A_disableCaptureCompareInterrupt
+                0x0000b3dc                Timer_A_getCaptureCompareInterruptStatus
+                0x0000b40a                Timer_A_clear
+                0x0000b420                Timer_A_getSynchronizedCaptureCompareInput
+                0x0000b44e                Timer_A_getOutputForOutputModeOutBitValue
+                0x0000b472                Timer_A_getCaptureCompareCount
+                0x0000b48c                Timer_A_setOutputForOutputModeOutBitValue
+                0x0000b4d6                Timer_A_outputPWM
+                0x0000b590                Timer_A_stop
+                0x0000b5a8                Timer_A_setCompareValue
+                0x0000b5ce                Timer_A_setOutputMode
+                0x0000b602                Timer_A_clearTimerInterrupt
+                0x0000b618                Timer_A_clearCaptureCompareInterrupt
+                0x0000b63a                Timer_A_getCounterValue
+ .text          0x0000b6a0       0xac ./driverlib/tlv.o
+                0x0000b6a0                TLV_getInfo
+                0x0000b6f4                TLV_performChecksumCheck
+ .text          0x0000b74c       0xcc ./driverlib/wdt.o
+                0x0000b74c                WDT_hold
+                0x0000b776                WDT_start
+                0x0000b7a0                WDT_resetTimer
+                0x0000b7c8                WDT_initWatchdogTimer
+                0x0000b7f0                WDT_initIntervalTimer
+ .text          0x0000b818      0x100 ./communication.o
+                0x0000b818                fifo_add
+                0x0000b848                tx
+                0x0000b88a                puts
+                0x0000b8b4                putc
+                0x0000b8c6                USCI_A0_ISR
+ .text          0x0000b918      0x1d0 ./main.o
+                0x0000b918                tlv_setup
+                0x0000b9bc                uart_setup
+                0x0000ba30                adc_setup
+                0x0000baa0                main
+ .text          0x0000bae8      0x6b0 ./metrology-background.o
+                0x0000bae8                metrology_start
+                0x0000bb34                metrology_print_status
+                0x0000c0f4                SD24_ISR
+ .text          0x0000c198      0x510 ./printf.o
+                0x0000c386                printf
+ .text          0x0000c6a8        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
  .text.udivmodsi4
-                0x0000bc48       0x8a /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
-                0x0000bc48                udivmodsi4
+                0x0000c6a8       0x8a /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+                0x0000c6a8                udivmodsi4
  .text.__divsi3
-                0x0000bcd2       0x84 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
-                0x0000bcd2                __mspabi_divli
+                0x0000c732       0x84 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+                0x0000c732                __mspabi_divli
  .text.__modsi3
-                0x0000bd56       0x60 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
-                0x0000bd56                __mspabi_remli
+                0x0000c7b6       0x60 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+                0x0000c7b6                __mspabi_remli
  .text.__udivsi3
-                0x0000bdb6        0xe /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
-                0x0000bdb6                __mspabi_divlu
+                0x0000c816        0xe /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+                0x0000c816                __mspabi_divlu
  .text.__umodsi3
-                0x0000bdc4        0xe /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
-                0x0000bdc4                __mspabi_remul
- .text          0x0000bdd2       0x10 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(epilogue.o)
-                0x0000bdd2                __mspabi_func_epilog_7
-                0x0000bdd4                __mspabi_func_epilog_6
-                0x0000bdd6                __mspabi_func_epilog_5
-                0x0000bdd8                __mspabi_func_epilog_4
-                0x0000bdda                __mspabi_func_epilog_3
-                0x0000bddc                __mspabi_func_epilog_2
-                0x0000bdde                __mspabi_func_epilog_1
- .text          0x0000bde2       0x74 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(slli.o)
-                0x0000bde2                __mspabi_slli_15
-                0x0000bde4                __mspabi_slli_14
-                0x0000bde6                __mspabi_slli_13
-                0x0000bde8                __mspabi_slli_12
-                0x0000bdea                __mspabi_slli_11
-                0x0000bdec                __mspabi_slli_10
-                0x0000bdee                __mspabi_slli_9
-                0x0000bdf0                __mspabi_slli_8
-                0x0000bdf2                __mspabi_slli_7
-                0x0000bdf4                __mspabi_slli_6
-                0x0000bdf6                __mspabi_slli_5
-                0x0000bdf8                __mspabi_slli_4
-                0x0000bdfa                __mspabi_slli_3
-                0x0000bdfc                __mspabi_slli_2
-                0x0000bdfe                __mspabi_slli_1
-                0x0000be06                __mspabi_slli
-                0x0000be0c                __mspabi_slll_15
-                0x0000be10                __mspabi_slll_14
-                0x0000be14                __mspabi_slll_13
-                0x0000be18                __mspabi_slll_12
-                0x0000be1c                __mspabi_slll_11
-                0x0000be20                __mspabi_slll_10
-                0x0000be24                __mspabi_slll_9
-                0x0000be28                __mspabi_slll_8
-                0x0000be2c                __mspabi_slll_7
-                0x0000be30                __mspabi_slll_6
-                0x0000be34                __mspabi_slll_5
-                0x0000be38                __mspabi_slll_4
-                0x0000be3c                __mspabi_slll_3
-                0x0000be40                __mspabi_slll_2
-                0x0000be44                __mspabi_slll_1
-                0x0000be50                __mspabi_slll
- .text          0x0000be56       0x74 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srai.o)
-                0x0000be56                __mspabi_srai_15
-                0x0000be58                __mspabi_srai_14
-                0x0000be5a                __mspabi_srai_13
-                0x0000be5c                __mspabi_srai_12
-                0x0000be5e                __mspabi_srai_11
-                0x0000be60                __mspabi_srai_10
-                0x0000be62                __mspabi_srai_9
-                0x0000be64                __mspabi_srai_8
-                0x0000be66                __mspabi_srai_7
-                0x0000be68                __mspabi_srai_6
-                0x0000be6a                __mspabi_srai_5
-                0x0000be6c                __mspabi_srai_4
-                0x0000be6e                __mspabi_srai_3
-                0x0000be70                __mspabi_srai_2
-                0x0000be72                __mspabi_srai_1
-                0x0000be7a                __mspabi_srai
-                0x0000be80                __mspabi_sral_15
-                0x0000be84                __mspabi_sral_14
-                0x0000be88                __mspabi_sral_13
-                0x0000be8c                __mspabi_sral_12
-                0x0000be90                __mspabi_sral_11
-                0x0000be94                __mspabi_sral_10
-                0x0000be98                __mspabi_sral_9
-                0x0000be9c                __mspabi_sral_8
-                0x0000bea0                __mspabi_sral_7
-                0x0000bea4                __mspabi_sral_6
-                0x0000bea8                __mspabi_sral_5
-                0x0000beac                __mspabi_sral_4
-                0x0000beb0                __mspabi_sral_3
-                0x0000beb4                __mspabi_sral_2
-                0x0000beb8                __mspabi_sral_1
-                0x0000bec4                __mspabi_sral
- .text          0x0000beca       0xb4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srli.o)
-                0x0000beca                __mspabi_srli_15
-                0x0000bece                __mspabi_srli_14
-                0x0000bed2                __mspabi_srli_13
-                0x0000bed6                __mspabi_srli_12
-                0x0000beda                __mspabi_srli_11
-                0x0000bede                __mspabi_srli_10
-                0x0000bee2                __mspabi_srli_9
-                0x0000bee6                __mspabi_srli_8
-                0x0000beea                __mspabi_srli_7
-                0x0000beee                __mspabi_srli_6
-                0x0000bef2                __mspabi_srli_5
-                0x0000bef6                __mspabi_srli_4
-                0x0000befa                __mspabi_srli_3
-                0x0000befe                __mspabi_srli_2
-                0x0000bf02                __mspabi_srli_1
-                0x0000bf0e                __mspabi_srli
-                0x0000bf14                __mspabi_srll_15
-                0x0000bf1a                __mspabi_srll_14
-                0x0000bf20                __mspabi_srll_13
-                0x0000bf26                __mspabi_srll_12
-                0x0000bf2c                __mspabi_srll_11
-                0x0000bf32                __mspabi_srll_10
-                0x0000bf38                __mspabi_srll_9
-                0x0000bf3e                __mspabi_srll_8
-                0x0000bf44                __mspabi_srll_7
-                0x0000bf4a                __mspabi_srll_6
-                0x0000bf50                __mspabi_srll_5
-                0x0000bf56                __mspabi_srll_4
-                0x0000bf5c                __mspabi_srll_3
-                0x0000bf62                __mspabi_srll_2
-                0x0000bf68                __mspabi_srll_1
-                0x0000bf78                __mspabi_srll
- .text          0x0000bf7e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
- .text          0x0000bf7e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
- .text          0x0000bf7e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
- .text          0x0000bf7e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
- .text.memmove  0x0000bf7e       0x44 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
-                0x0000bf7e                memmove
- .text          0x0000bfc2        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
- .text.memset   0x0000bfc2       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
-                0x0000bfc2                memset
- .text          0x0000bfd6       0x20 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
- .text          0x0000bff6        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
+                0x0000c824        0xe /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+                0x0000c824                __mspabi_remul
+ .text          0x0000c832       0x10 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(epilogue.o)
+                0x0000c832                __mspabi_func_epilog_7
+                0x0000c834                __mspabi_func_epilog_6
+                0x0000c836                __mspabi_func_epilog_5
+                0x0000c838                __mspabi_func_epilog_4
+                0x0000c83a                __mspabi_func_epilog_3
+                0x0000c83c                __mspabi_func_epilog_2
+                0x0000c83e                __mspabi_func_epilog_1
+ .text          0x0000c842       0x74 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(slli.o)
+                0x0000c842                __mspabi_slli_15
+                0x0000c844                __mspabi_slli_14
+                0x0000c846                __mspabi_slli_13
+                0x0000c848                __mspabi_slli_12
+                0x0000c84a                __mspabi_slli_11
+                0x0000c84c                __mspabi_slli_10
+                0x0000c84e                __mspabi_slli_9
+                0x0000c850                __mspabi_slli_8
+                0x0000c852                __mspabi_slli_7
+                0x0000c854                __mspabi_slli_6
+                0x0000c856                __mspabi_slli_5
+                0x0000c858                __mspabi_slli_4
+                0x0000c85a                __mspabi_slli_3
+                0x0000c85c                __mspabi_slli_2
+                0x0000c85e                __mspabi_slli_1
+                0x0000c866                __mspabi_slli
+                0x0000c86c                __mspabi_slll_15
+                0x0000c870                __mspabi_slll_14
+                0x0000c874                __mspabi_slll_13
+                0x0000c878                __mspabi_slll_12
+                0x0000c87c                __mspabi_slll_11
+                0x0000c880                __mspabi_slll_10
+                0x0000c884                __mspabi_slll_9
+                0x0000c888                __mspabi_slll_8
+                0x0000c88c                __mspabi_slll_7
+                0x0000c890                __mspabi_slll_6
+                0x0000c894                __mspabi_slll_5
+                0x0000c898                __mspabi_slll_4
+                0x0000c89c                __mspabi_slll_3
+                0x0000c8a0                __mspabi_slll_2
+                0x0000c8a4                __mspabi_slll_1
+                0x0000c8b0                __mspabi_slll
+ .text          0x0000c8b6       0x74 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srai.o)
+                0x0000c8b6                __mspabi_srai_15
+                0x0000c8b8                __mspabi_srai_14
+                0x0000c8ba                __mspabi_srai_13
+                0x0000c8bc                __mspabi_srai_12
+                0x0000c8be                __mspabi_srai_11
+                0x0000c8c0                __mspabi_srai_10
+                0x0000c8c2                __mspabi_srai_9
+                0x0000c8c4                __mspabi_srai_8
+                0x0000c8c6                __mspabi_srai_7
+                0x0000c8c8                __mspabi_srai_6
+                0x0000c8ca                __mspabi_srai_5
+                0x0000c8cc                __mspabi_srai_4
+                0x0000c8ce                __mspabi_srai_3
+                0x0000c8d0                __mspabi_srai_2
+                0x0000c8d2                __mspabi_srai_1
+                0x0000c8da                __mspabi_srai
+                0x0000c8e0                __mspabi_sral_15
+                0x0000c8e4                __mspabi_sral_14
+                0x0000c8e8                __mspabi_sral_13
+                0x0000c8ec                __mspabi_sral_12
+                0x0000c8f0                __mspabi_sral_11
+                0x0000c8f4                __mspabi_sral_10
+                0x0000c8f8                __mspabi_sral_9
+                0x0000c8fc                __mspabi_sral_8
+                0x0000c900                __mspabi_sral_7
+                0x0000c904                __mspabi_sral_6
+                0x0000c908                __mspabi_sral_5
+                0x0000c90c                __mspabi_sral_4
+                0x0000c910                __mspabi_sral_3
+                0x0000c914                __mspabi_sral_2
+                0x0000c918                __mspabi_sral_1
+                0x0000c924                __mspabi_sral
+ .text          0x0000c92a       0xb4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srli.o)
+                0x0000c92a                __mspabi_srli_15
+                0x0000c92e                __mspabi_srli_14
+                0x0000c932                __mspabi_srli_13
+                0x0000c936                __mspabi_srli_12
+                0x0000c93a                __mspabi_srli_11
+                0x0000c93e                __mspabi_srli_10
+                0x0000c942                __mspabi_srli_9
+                0x0000c946                __mspabi_srli_8
+                0x0000c94a                __mspabi_srli_7
+                0x0000c94e                __mspabi_srli_6
+                0x0000c952                __mspabi_srli_5
+                0x0000c956                __mspabi_srli_4
+                0x0000c95a                __mspabi_srli_3
+                0x0000c95e                __mspabi_srli_2
+                0x0000c962                __mspabi_srli_1
+                0x0000c96e                __mspabi_srli
+                0x0000c974                __mspabi_srll_15
+                0x0000c97a                __mspabi_srll_14
+                0x0000c980                __mspabi_srll_13
+                0x0000c986                __mspabi_srll_12
+                0x0000c98c                __mspabi_srll_11
+                0x0000c992                __mspabi_srll_10
+                0x0000c998                __mspabi_srll_9
+                0x0000c99e                __mspabi_srll_8
+                0x0000c9a4                __mspabi_srll_7
+                0x0000c9aa                __mspabi_srll_6
+                0x0000c9b0                __mspabi_srll_5
+                0x0000c9b6                __mspabi_srll_4
+                0x0000c9bc                __mspabi_srll_3
+                0x0000c9c2                __mspabi_srll_2
+                0x0000c9c8                __mspabi_srll_1
+                0x0000c9d8                __mspabi_srll
+ .text          0x0000c9de        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+ *fill*         0x0000c9de        0x2 
+ .text.__mulhi2
+                0x0000c9e0       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000c9e0                __mulhi2
+ .text.__mulsihi2
+                0x0000c9f4       0x18 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000c9f4                __mulsihi2
+ .text.__umulsihi2
+                0x0000ca0c       0x18 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000ca0c                __umulsihi2
+ .text.__mulsi2
+                0x0000ca24       0x30 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000ca24                __mulsi2
+ .text.__mulsi2_hw32
+                0x0000ca54       0x20 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000ca54                __mulsi2_hw32
+ .text.__muldisi2_hw32
+                0x0000ca74       0x28 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000ca74                __muldisi2_hw32
+ .text.__umuldisi2_hw32
+                0x0000ca9c       0x28 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000ca9c                __umuldisi2_hw32
+ .text.__mulhi2_f5
+                0x0000cac4       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000cac4                __mulhi2_f5
+ .text.__mulsihi2_f5
+                0x0000cad8       0x18 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000cad8                __mulsihi2_f5
+ .text.__umulsihi2_f5
+                0x0000caf0       0x18 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000caf0                __umulsihi2_f5
+ .text.__mulsi2_f5
+                0x0000cb08       0x20 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000cb08                __mulsi2_f5
+ .text.__muldisi2_f5
+                0x0000cb28       0x28 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000cb28                __muldisi2_f5
+ .text.__umuldisi2_f5
+                0x0000cb50       0x28 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+                0x0000cb50                __umuldisi2_f5
+ .text          0x0000cb78        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .text.memset   0x0000cb78       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+                0x0000cb78                memset
+ .text          0x0000cb8c        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+ .text          0x0000cb8c        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+ .text          0x0000cb8c        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+ .text          0x0000cb8c        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .text.memmove  0x0000cb8c       0x44 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+                0x0000cb8c                memmove
+ .text          0x0000cbd0       0x20 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
+ .text          0x0000cbf0        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
  *(.text.*personality*)
  *(.gnu.warning)
  *(.interp .hash .dynsym .dynstr .gnu.version*)
-                0x0000bff6                PROVIDE (__etext, .)
-                0x0000bff6                PROVIDE (_etext, .)
-                0x0000bff6                PROVIDE (etext, .)
-                0x0000bff6                . = ALIGN (0x2)
+                0x0000cbf0                PROVIDE (__etext, .)
+                0x0000cbf0                PROVIDE (_etext, .)
+                0x0000cbf0                PROVIDE (etext, .)
+                0x0000cbf0                . = ALIGN (0x2)
  *(.init)
- .init          0x0000bff6        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
-                0x0000bff6                __msp430_init
- .init          0x0000bff6        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
- .init          0x0000bffa        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
- .init          0x0000bffe        0xa /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
-                0x0000c008                __msp430_init_end
+ .init          0x0000cbf0        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
+                0x0000cbf0                __msp430_init
+ .init          0x0000cbf0        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
+ .init          0x0000cbf4        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
+ .init          0x0000cbf8        0xa /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
+                0x0000cc02                __msp430_init_end
  *(.fini)
- .fini          0x0000c008        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
-                0x0000c008                __msp430_fini
- .fini          0x0000c00c        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
- .fini          0x0000c010        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
-                0x0000c012                __msp430_fini_end
+ .fini          0x0000cc02        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
+                0x0000cc02                __msp430_fini
+ .fini          0x0000cc06        0x4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
+ .fini          0x0000cc0a        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
+                0x0000cc0c                __msp430_fini_end
  *(.tm_clone_table)
  .tm_clone_table
-                0x0000c012        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
+                0x0000cc0c        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
  .tm_clone_table
-                0x0000c012        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
-                0x0000c012                __TMC_END__
+                0x0000cc0c        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
+                0x0000cc0c                __TMC_END__
 
-.data           0x00000200       0x10 indlæsningsadresse 0x0000c012
+.data           0x00000200       0x16 indlæsningsadresse 0x0000cc0c
                 0x00000200                . = ALIGN (0x2)
                 0x00000200                PROVIDE (__datastart, .)
  *(.jcr)
@@ -1281,6 +1362,7 @@ __reset_vector  0x0000fffe        0x2
  .data          0x00000202        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
  .data          0x00000202        0x2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
                 0x00000202                __dso_handle
+ .data          0x00000204        0x0 ./toolkit/fastarithmetic.o
  .data          0x00000204        0x0 ./driverlib/cs.o
  .data          0x00000204        0x0 ./driverlib/eusci_a_spi.o
  .data          0x00000204        0x0 ./driverlib/eusci_a_uart.o
@@ -1297,89 +1379,95 @@ __reset_vector  0x0000fffe        0x2
  .data          0x00000204        0x0 ./driverlib/wdt.o
  .data          0x00000204        0x8 ./communication.o
  .data          0x0000020c        0x0 ./main.o
- .data          0x0000020c        0x4 ./metrology-background.o
-                0x0000020c                FLAGS
-                0x0000020e                index1
- .data          0x00000210        0x0 ./printf.o
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(epilogue.o)
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(slli.o)
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srai.o)
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srli.o)
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
- .data          0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
+ .data          0x0000020c        0xa ./metrology-background.o
+                0x0000020c                samples_per_second
+                0x0000020e                datardy
+                0x00000210                v_hist_wrt_ptr
+                0x00000212                v_hist_start
+                0x00000214                v_hist_end
+ .data          0x00000216        0x0 ./printf.o
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(epilogue.o)
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(slli.o)
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srai.o)
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srli.o)
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
+ .data          0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
  *(.gnu.linkonce.d.*personality*)
  *(.data1)
  *(.got.plt)
  *(.got)
-                0x00000210                . = ALIGN (0x2)
+                0x00000216                . = ALIGN (0x2)
  *(.sdata .sdata.* .gnu.linkonce.s.* D_2 D_1)
-                0x00000210                . = ALIGN (0x2)
-                0x00000210                _edata = .
-                0x00000210                PROVIDE (edata, .)
-                0x00000210                PROVIDE (__dataend, .)
-                0x0000c012                PROVIDE (__romdatastart, LOADADDR (.data))
-                0x00000010                PROVIDE (__romdatacopysize, SIZEOF (.data))
+                0x00000216                . = ALIGN (0x2)
+                0x00000216                _edata = .
+                0x00000216                PROVIDE (edata, .)
+                0x00000216                PROVIDE (__dataend, .)
+                0x0000cc0c                PROVIDE (__romdatastart, LOADADDR (.data))
+                0x00000016                PROVIDE (__romdatacopysize, SIZEOF (.data))
 
-.bss            0x00000210      0x214 indlæsningsadresse 0x0000c022
-                0x00000210                . = ALIGN (0x2)
-                0x00000210                PROVIDE (__bssstart, .)
+.bss            0x00000216      0x3dc indlæsningsadresse 0x0000cc22
+                0x00000216                . = ALIGN (0x2)
+                0x00000216                PROVIDE (__bssstart, .)
  *(.dynbss)
  *(.sbss .sbss.*)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x00000210        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
- .bss           0x00000210       0x12 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
- .bss           0x00000222        0x0 ./driverlib/cs.o
- .bss           0x00000222        0x0 ./driverlib/eusci_a_spi.o
- .bss           0x00000222        0x0 ./driverlib/eusci_a_uart.o
- .bss           0x00000222        0x0 ./driverlib/eusci_b_i2c.o
- .bss           0x00000222        0x0 ./driverlib/eusci_b_spi.o
- .bss           0x00000222        0x0 ./driverlib/flashctl.o
- .bss           0x00000222        0x0 ./driverlib/gpio.o
- .bss           0x00000222        0x0 ./driverlib/mpy.o
- .bss           0x00000222        0x0 ./driverlib/pmm.o
- .bss           0x00000222        0x0 ./driverlib/sd24.o
- .bss           0x00000222        0x0 ./driverlib/sfr.o
- .bss           0x00000222        0x0 ./driverlib/timer_a.o
- .bss           0x00000222        0x0 ./driverlib/tlv.o
- .bss           0x00000222        0x0 ./driverlib/wdt.o
- .bss           0x00000222      0x1f6 ./communication.o
- .bss           0x00000418        0x0 ./main.o
- .bss           0x00000418        0x6 ./metrology-background.o
- .bss           0x0000041e        0x0 ./printf.o
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(epilogue.o)
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(slli.o)
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srai.o)
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srli.o)
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
- .bss           0x0000041e        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
-                0x0000041e                . = ALIGN (0x2)
+ .bss           0x00000216        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
+ .bss           0x00000216       0x12 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
+ .bss           0x00000228        0x0 ./toolkit/fastarithmetic.o
+ .bss           0x00000228        0x0 ./driverlib/cs.o
+ .bss           0x00000228        0x0 ./driverlib/eusci_a_spi.o
+ .bss           0x00000228        0x0 ./driverlib/eusci_a_uart.o
+ .bss           0x00000228        0x0 ./driverlib/eusci_b_i2c.o
+ .bss           0x00000228        0x0 ./driverlib/eusci_b_spi.o
+ .bss           0x00000228        0x0 ./driverlib/flashctl.o
+ .bss           0x00000228        0x0 ./driverlib/gpio.o
+ .bss           0x00000228        0x0 ./driverlib/mpy.o
+ .bss           0x00000228        0x0 ./driverlib/pmm.o
+ .bss           0x00000228        0x0 ./driverlib/sd24.o
+ .bss           0x00000228        0x0 ./driverlib/sfr.o
+ .bss           0x00000228        0x0 ./driverlib/timer_a.o
+ .bss           0x00000228        0x0 ./driverlib/tlv.o
+ .bss           0x00000228        0x0 ./driverlib/wdt.o
+ .bss           0x00000228      0x1f4 ./communication.o
+ .bss           0x0000041c        0x0 ./main.o
+ .bss           0x0000041c        0x6 ./metrology-background.o
+ .bss           0x00000422        0x0 ./printf.o
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(epilogue.o)
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(slli.o)
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srai.o)
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srli.o)
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
+ .bss           0x00000422        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
+                0x00000422                . = ALIGN (0x2)
  *(COMMON)
- COMMON         0x0000041e        0x6 ./metrology-background.o
-                0x0000041e                Ch0results
-                0x00000420                Ch1results
-                0x00000422                Ch2results
-                0x00000424                PROVIDE (__bssend, .)
-                0x00000214                PROVIDE (__bsssize, SIZEOF (.bss))
+ COMMON         0x00000422      0x1d0 ./metrology-background.o
+                0x00000422                metrology
+                0x000004a6                v_hist
+                0x000005f0                status
+                0x000005f2                PROVIDE (__bssend, .)
+                0x000003dc                PROVIDE (__bsssize, SIZEOF (.bss))
 
-.noinit         0x00000424        0x0 indlæsningsadresse 0x0000c022
-                0x00000424                . = ALIGN (0x2)
-                0x00000424                PROVIDE (__noinit_start, .)
+.noinit         0x000005f2        0x0 indlæsningsadresse 0x0000cc22
+                0x000005f2                . = ALIGN (0x2)
+                0x000005f2                PROVIDE (__noinit_start, .)
  *(.noinit)
-                0x00000424                . = ALIGN (0x2)
-                0x00000424                PROVIDE (__noinit_end, .)
-                0x00000424                end = .
+                0x000005f2                . = ALIGN (0x2)
+                0x000005f2                PROVIDE (__noinit_end, .)
+                0x000005f2                end = .
 
 .stack          0x00000a00        0x0
                 0x00000a00                PROVIDE (__stack, .)
@@ -1388,72 +1476,76 @@ __reset_vector  0x0000fffe        0x2
 .infoA
 
 .MP430.attributes
-                0x00000000      0x2e0
+                0x00000000      0x30e
  *(.MSP430.attributes)
  .MSP430.attributes
                 0x00000000       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
  .MSP430.attributes
                 0x00000017       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
  .MSP430.attributes
-                0x0000002e       0x17 ./driverlib/cs.o
+                0x0000002e       0x17 ./toolkit/fastarithmetic.o
  .MSP430.attributes
-                0x00000045       0x17 ./driverlib/eusci_a_spi.o
+                0x00000045       0x17 ./driverlib/cs.o
  .MSP430.attributes
-                0x0000005c       0x17 ./driverlib/eusci_a_uart.o
+                0x0000005c       0x17 ./driverlib/eusci_a_spi.o
  .MSP430.attributes
-                0x00000073       0x17 ./driverlib/eusci_b_i2c.o
+                0x00000073       0x17 ./driverlib/eusci_a_uart.o
  .MSP430.attributes
-                0x0000008a       0x17 ./driverlib/eusci_b_spi.o
+                0x0000008a       0x17 ./driverlib/eusci_b_i2c.o
  .MSP430.attributes
-                0x000000a1       0x17 ./driverlib/flashctl.o
+                0x000000a1       0x17 ./driverlib/eusci_b_spi.o
  .MSP430.attributes
-                0x000000b8       0x17 ./driverlib/gpio.o
+                0x000000b8       0x17 ./driverlib/flashctl.o
  .MSP430.attributes
-                0x000000cf       0x17 ./driverlib/mpy.o
+                0x000000cf       0x17 ./driverlib/gpio.o
  .MSP430.attributes
-                0x000000e6       0x17 ./driverlib/pmm.o
+                0x000000e6       0x17 ./driverlib/mpy.o
  .MSP430.attributes
-                0x000000fd       0x17 ./driverlib/sd24.o
+                0x000000fd       0x17 ./driverlib/pmm.o
  .MSP430.attributes
-                0x00000114       0x17 ./driverlib/sfr.o
+                0x00000114       0x17 ./driverlib/sd24.o
  .MSP430.attributes
-                0x0000012b       0x17 ./driverlib/timer_a.o
+                0x0000012b       0x17 ./driverlib/sfr.o
  .MSP430.attributes
-                0x00000142       0x17 ./driverlib/tlv.o
+                0x00000142       0x17 ./driverlib/timer_a.o
  .MSP430.attributes
-                0x00000159       0x17 ./driverlib/wdt.o
+                0x00000159       0x17 ./driverlib/tlv.o
  .MSP430.attributes
-                0x00000170       0x17 ./communication.o
+                0x00000170       0x17 ./driverlib/wdt.o
  .MSP430.attributes
-                0x00000187       0x17 ./main.o
+                0x00000187       0x17 ./communication.o
  .MSP430.attributes
-                0x0000019e       0x17 ./metrology-background.o
+                0x0000019e       0x17 ./main.o
  .MSP430.attributes
-                0x000001b5       0x17 ./printf.o
+                0x000001b5       0x17 ./metrology-background.o
  .MSP430.attributes
-                0x000001cc       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+                0x000001cc       0x17 ./printf.o
  .MSP430.attributes
-                0x000001e3       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(epilogue.o)
+                0x000001e3       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
  .MSP430.attributes
-                0x000001fa       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(slli.o)
+                0x000001fa       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(epilogue.o)
  .MSP430.attributes
-                0x00000211       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srai.o)
+                0x00000211       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(slli.o)
  .MSP430.attributes
-                0x00000228       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srli.o)
+                0x00000228       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srai.o)
  .MSP430.attributes
-                0x0000023f       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+                0x0000023f       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(srli.o)
  .MSP430.attributes
-                0x00000256       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+                0x00000256       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2hw_mul.o)
  .MSP430.attributes
-                0x0000026d       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+                0x0000026d       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
  .MSP430.attributes
-                0x00000284       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+                0x00000284       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
  .MSP430.attributes
-                0x0000029b       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+                0x0000029b       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
  .MSP430.attributes
-                0x000002b2       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
+                0x000002b2       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
  .MSP430.attributes
-                0x000002c9       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
+                0x000002c9       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .MSP430.attributes
+                0x000002e0       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
+ .MSP430.attributes
+                0x000002f7       0x17 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
  *(.gnu.attributes)
  *(__TI_build_attributes)
 
@@ -1479,6 +1571,7 @@ __reset_vector  0x0000fffe        0x2
  *(.comment)
  .comment       0x00000000       0x7c /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtbegin.o
                                  0x7d (størrelse inden forenkling)
+ .comment       0x00000000       0x7d ./toolkit/fastarithmetic.o
  .comment       0x00000000       0x7d ./driverlib/cs.o
  .comment       0x00000000       0x7d ./driverlib/eusci_a_spi.o
  .comment       0x00000000       0x7d ./driverlib/eusci_a_uart.o
@@ -1498,8 +1591,8 @@ __reset_vector  0x0000fffe        0x2
  .comment       0x00000000       0x7d ./metrology-background.o
  .comment       0x00000000       0x7d ./printf.o
  .comment       0x00000000       0x7d /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
- .comment       0x00000000       0x7d /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
  .comment       0x00000000       0x7d /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .comment       0x00000000       0x7d /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
  .comment       0x00000000       0x7d /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/crtend.o
 
 .debug
@@ -1514,243 +1607,252 @@ __reset_vector  0x0000fffe        0x2
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x224
+.debug_aranges  0x00000000      0x238
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x1c /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
  .debug_aranges
-                0x0000001c       0x14 ./driverlib/cs.o
+                0x0000001c       0x14 ./toolkit/fastarithmetic.o
  .debug_aranges
-                0x00000030       0x14 ./driverlib/eusci_a_spi.o
+                0x00000030       0x14 ./driverlib/cs.o
  .debug_aranges
-                0x00000044       0x14 ./driverlib/eusci_a_uart.o
+                0x00000044       0x14 ./driverlib/eusci_a_spi.o
  .debug_aranges
-                0x00000058       0x14 ./driverlib/eusci_b_i2c.o
+                0x00000058       0x14 ./driverlib/eusci_a_uart.o
  .debug_aranges
-                0x0000006c       0x14 ./driverlib/eusci_b_spi.o
+                0x0000006c       0x14 ./driverlib/eusci_b_i2c.o
  .debug_aranges
-                0x00000080       0x14 ./driverlib/flashctl.o
+                0x00000080       0x14 ./driverlib/eusci_b_spi.o
  .debug_aranges
-                0x00000094       0x14 ./driverlib/gpio.o
+                0x00000094       0x14 ./driverlib/flashctl.o
  .debug_aranges
-                0x000000a8       0x14 ./driverlib/mpy.o
+                0x000000a8       0x14 ./driverlib/gpio.o
  .debug_aranges
-                0x000000bc       0x14 ./driverlib/pmm.o
+                0x000000bc       0x14 ./driverlib/mpy.o
  .debug_aranges
-                0x000000d0       0x14 ./driverlib/sd24.o
+                0x000000d0       0x14 ./driverlib/pmm.o
  .debug_aranges
-                0x000000e4       0x14 ./driverlib/sfr.o
+                0x000000e4       0x14 ./driverlib/sd24.o
  .debug_aranges
-                0x000000f8       0x14 ./driverlib/timer_a.o
+                0x000000f8       0x14 ./driverlib/sfr.o
  .debug_aranges
-                0x0000010c       0x14 ./driverlib/tlv.o
+                0x0000010c       0x14 ./driverlib/timer_a.o
  .debug_aranges
-                0x00000120       0x14 ./driverlib/wdt.o
+                0x00000120       0x14 ./driverlib/tlv.o
  .debug_aranges
-                0x00000134       0x14 ./communication.o
+                0x00000134       0x14 ./driverlib/wdt.o
  .debug_aranges
-                0x00000148       0x14 ./main.o
+                0x00000148       0x14 ./communication.o
  .debug_aranges
-                0x0000015c       0x14 ./metrology-background.o
+                0x0000015c       0x14 ./main.o
  .debug_aranges
-                0x00000170       0x14 ./printf.o
+                0x00000170       0x14 ./metrology-background.o
  .debug_aranges
-                0x00000184       0x24 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+                0x00000184       0x14 ./printf.o
  .debug_aranges
-                0x000001a8       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+                0x00000198       0x24 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
  .debug_aranges
-                0x000001bc       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+                0x000001bc       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
  .debug_aranges
-                0x000001d0       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+                0x000001d0       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
  .debug_aranges
-                0x000001e4       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+                0x000001e4       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
  .debug_aranges
-                0x000001f8       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+                0x000001f8       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
  .debug_aranges
-                0x0000020c       0x18 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
+                0x0000020c       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .debug_aranges
+                0x00000220       0x18 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x4885
+.debug_info     0x00000000     0x5004
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0xd2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
- .debug_info    0x000000d2      0x20f ./driverlib/cs.o
- .debug_info    0x000002e1      0x4b8 ./driverlib/eusci_a_spi.o
- .debug_info    0x00000799      0x489 ./driverlib/eusci_a_uart.o
- .debug_info    0x00000c22      0x920 ./driverlib/eusci_b_i2c.o
- .debug_info    0x00001542      0x4b8 ./driverlib/eusci_b_spi.o
- .debug_info    0x000019fa      0x395 ./driverlib/flashctl.o
- .debug_info    0x00001d8f      0x476 ./driverlib/gpio.o
- .debug_info    0x00002205      0x19c ./driverlib/mpy.o
- .debug_info    0x000023a1      0x213 ./driverlib/pmm.o
- .debug_info    0x000025b4      0x641 ./driverlib/sd24.o
- .debug_info    0x00002bf5      0x12c ./driverlib/sfr.o
- .debug_info    0x00002d21      0x878 ./driverlib/timer_a.o
- .debug_info    0x00003599      0x137 ./driverlib/tlv.o
- .debug_info    0x000036d0      0x1af ./driverlib/wdt.o
- .debug_info    0x0000387f      0x25d ./communication.o
- .debug_info    0x00003adc      0x307 ./main.o
- .debug_info    0x00003de3      0x1c1 ./metrology-background.o
- .debug_info    0x00003fa4      0x18c ./printf.o
- .debug_info    0x00004130      0x24c /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
- .debug_info    0x0000437c       0xd2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
- .debug_info    0x0000444e       0xd2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
- .debug_info    0x00004520       0xd2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
- .debug_info    0x000045f2       0xf8 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
- .debug_info    0x000046ea       0xc9 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
- .debug_info    0x000047b3       0xd2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
+ .debug_info    0x000000d2      0x25a ./toolkit/fastarithmetic.o
+ .debug_info    0x0000032c      0x20f ./driverlib/cs.o
+ .debug_info    0x0000053b      0x4b8 ./driverlib/eusci_a_spi.o
+ .debug_info    0x000009f3      0x489 ./driverlib/eusci_a_uart.o
+ .debug_info    0x00000e7c      0x920 ./driverlib/eusci_b_i2c.o
+ .debug_info    0x0000179c      0x4b8 ./driverlib/eusci_b_spi.o
+ .debug_info    0x00001c54      0x395 ./driverlib/flashctl.o
+ .debug_info    0x00001fe9      0x476 ./driverlib/gpio.o
+ .debug_info    0x0000245f      0x19c ./driverlib/mpy.o
+ .debug_info    0x000025fb      0x213 ./driverlib/pmm.o
+ .debug_info    0x0000280e      0x641 ./driverlib/sd24.o
+ .debug_info    0x00002e4f      0x12c ./driverlib/sfr.o
+ .debug_info    0x00002f7b      0x878 ./driverlib/timer_a.o
+ .debug_info    0x000037f3      0x137 ./driverlib/tlv.o
+ .debug_info    0x0000392a      0x1af ./driverlib/wdt.o
+ .debug_info    0x00003ad9      0x1f9 ./communication.o
+ .debug_info    0x00003cd2      0x2bd ./main.o
+ .debug_info    0x00003f8f      0x781 ./metrology-background.o
+ .debug_info    0x00004710      0x19f ./printf.o
+ .debug_info    0x000048af      0x24c /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+ .debug_info    0x00004afb       0xc9 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .debug_info    0x00004bc4       0xd2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+ .debug_info    0x00004c96       0xd2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+ .debug_info    0x00004d68       0xd2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+ .debug_info    0x00004e3a       0xf8 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .debug_info    0x00004f32       0xd2 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
 
-.debug_abbrev   0x00000000     0x12e0
+.debug_abbrev   0x00000000     0x14ad
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0x12 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
- .debug_abbrev  0x00000012       0xdf ./driverlib/cs.o
- .debug_abbrev  0x000000f1       0xda ./driverlib/eusci_a_spi.o
- .debug_abbrev  0x000001cb       0xf8 ./driverlib/eusci_a_uart.o
- .debug_abbrev  0x000002c3      0x13d ./driverlib/eusci_b_i2c.o
- .debug_abbrev  0x00000400       0xda ./driverlib/eusci_b_spi.o
- .debug_abbrev  0x000004da      0x146 ./driverlib/flashctl.o
- .debug_abbrev  0x00000620       0xdf ./driverlib/gpio.o
- .debug_abbrev  0x000006ff       0xa8 ./driverlib/mpy.o
- .debug_abbrev  0x000007a7       0xc1 ./driverlib/pmm.o
- .debug_abbrev  0x00000868      0x11d ./driverlib/sd24.o
- .debug_abbrev  0x00000985       0x97 ./driverlib/sfr.o
- .debug_abbrev  0x00000a1c      0x182 ./driverlib/timer_a.o
- .debug_abbrev  0x00000b9e       0xa6 ./driverlib/tlv.o
- .debug_abbrev  0x00000c44       0x8a ./driverlib/wdt.o
- .debug_abbrev  0x00000cce      0x11b ./communication.o
- .debug_abbrev  0x00000de9      0x11d ./main.o
- .debug_abbrev  0x00000f06       0xcd ./metrology-background.o
- .debug_abbrev  0x00000fd3       0xd6 ./printf.o
- .debug_abbrev  0x000010a9       0xc3 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
- .debug_abbrev  0x0000116c       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
- .debug_abbrev  0x00001180       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
- .debug_abbrev  0x00001194       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
- .debug_abbrev  0x000011a8       0x9a /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
- .debug_abbrev  0x00001242       0x8c /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
- .debug_abbrev  0x000012ce       0x12 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
+ .debug_abbrev  0x00000012       0xe0 ./toolkit/fastarithmetic.o
+ .debug_abbrev  0x000000f2       0xdf ./driverlib/cs.o
+ .debug_abbrev  0x000001d1       0xda ./driverlib/eusci_a_spi.o
+ .debug_abbrev  0x000002ab       0xf8 ./driverlib/eusci_a_uart.o
+ .debug_abbrev  0x000003a3      0x13d ./driverlib/eusci_b_i2c.o
+ .debug_abbrev  0x000004e0       0xda ./driverlib/eusci_b_spi.o
+ .debug_abbrev  0x000005ba      0x146 ./driverlib/flashctl.o
+ .debug_abbrev  0x00000700       0xdf ./driverlib/gpio.o
+ .debug_abbrev  0x000007df       0xa8 ./driverlib/mpy.o
+ .debug_abbrev  0x00000887       0xc1 ./driverlib/pmm.o
+ .debug_abbrev  0x00000948      0x11d ./driverlib/sd24.o
+ .debug_abbrev  0x00000a65       0x97 ./driverlib/sfr.o
+ .debug_abbrev  0x00000afc      0x182 ./driverlib/timer_a.o
+ .debug_abbrev  0x00000c7e       0xa6 ./driverlib/tlv.o
+ .debug_abbrev  0x00000d24       0x8a ./driverlib/wdt.o
+ .debug_abbrev  0x00000dae      0x10a ./communication.o
+ .debug_abbrev  0x00000eb8      0x101 ./main.o
+ .debug_abbrev  0x00000fb9      0x1e7 ./metrology-background.o
+ .debug_abbrev  0x000011a0       0xd6 ./printf.o
+ .debug_abbrev  0x00001276       0xc3 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+ .debug_abbrev  0x00001339       0x8c /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .debug_abbrev  0x000013c5       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+ .debug_abbrev  0x000013d9       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+ .debug_abbrev  0x000013ed       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+ .debug_abbrev  0x00001401       0x9a /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .debug_abbrev  0x0000149b       0x12 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
 
-.debug_line     0x00000000     0x4a22
+.debug_line     0x00000000     0x4ec3
  *(.debug_line)
  .debug_line    0x00000000       0xf9 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
- .debug_line    0x000000f9      0x2ae ./driverlib/cs.o
- .debug_line    0x000003a7      0x3f8 ./driverlib/eusci_a_spi.o
- .debug_line    0x0000079f      0x466 ./driverlib/eusci_a_uart.o
- .debug_line    0x00000c05      0x830 ./driverlib/eusci_b_i2c.o
- .debug_line    0x00001435      0x3f2 ./driverlib/eusci_b_spi.o
- .debug_line    0x00001827      0x4f2 ./driverlib/flashctl.o
- .debug_line    0x00001d19      0x481 ./driverlib/gpio.o
- .debug_line    0x0000219a      0x26e ./driverlib/mpy.o
- .debug_line    0x00002408      0x2da ./driverlib/pmm.o
- .debug_line    0x000026e2      0x498 ./driverlib/sd24.o
- .debug_line    0x00002b7a      0x23e ./driverlib/sfr.o
- .debug_line    0x00002db8      0x5be ./driverlib/timer_a.o
- .debug_line    0x00003376      0x270 ./driverlib/tlv.o
- .debug_line    0x000035e6      0x28c ./driverlib/wdt.o
- .debug_line    0x00003872      0x3ae ./communication.o
- .debug_line    0x00003c20      0x41a ./main.o
- .debug_line    0x0000403a      0x36c ./metrology-background.o
- .debug_line    0x000043a6      0x1ba ./printf.o
- .debug_line    0x00004560       0x7e /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
- .debug_line    0x000045de       0x82 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
- .debug_line    0x00004660       0x8e /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
- .debug_line    0x000046ee       0x7c /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
- .debug_line    0x0000476a      0x118 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
- .debug_line    0x00004882      0x117 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
- .debug_line    0x00004999       0x89 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
+ .debug_line    0x000000f9      0x1b1 ./toolkit/fastarithmetic.o
+ .debug_line    0x000002aa      0x2ae ./driverlib/cs.o
+ .debug_line    0x00000558      0x3f8 ./driverlib/eusci_a_spi.o
+ .debug_line    0x00000950      0x466 ./driverlib/eusci_a_uart.o
+ .debug_line    0x00000db6      0x830 ./driverlib/eusci_b_i2c.o
+ .debug_line    0x000015e6      0x3f2 ./driverlib/eusci_b_spi.o
+ .debug_line    0x000019d8      0x4f2 ./driverlib/flashctl.o
+ .debug_line    0x00001eca      0x481 ./driverlib/gpio.o
+ .debug_line    0x0000234b      0x26e ./driverlib/mpy.o
+ .debug_line    0x000025b9      0x2da ./driverlib/pmm.o
+ .debug_line    0x00002893      0x498 ./driverlib/sd24.o
+ .debug_line    0x00002d2b      0x23e ./driverlib/sfr.o
+ .debug_line    0x00002f69      0x5be ./driverlib/timer_a.o
+ .debug_line    0x00003527      0x270 ./driverlib/tlv.o
+ .debug_line    0x00003797      0x28c ./driverlib/wdt.o
+ .debug_line    0x00003a23      0x36c ./communication.o
+ .debug_line    0x00003d8f      0x403 ./main.o
+ .debug_line    0x00004192      0x67b ./metrology-background.o
+ .debug_line    0x0000480d      0x1f4 ./printf.o
+ .debug_line    0x00004a01       0x7e /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+ .debug_line    0x00004a7f      0x117 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .debug_line    0x00004b96       0x82 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+ .debug_line    0x00004c18       0x8e /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+ .debug_line    0x00004ca6       0x7c /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+ .debug_line    0x00004d22      0x118 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .debug_line    0x00004e3a       0x89 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
 
-.debug_frame    0x00000000     0x139a
+.debug_frame    0x00000000     0x14fe
  *(.debug_frame)
- .debug_frame   0x00000000       0x82 ./driverlib/cs.o
- .debug_frame   0x00000082      0x162 ./driverlib/eusci_a_spi.o
- .debug_frame   0x000001e4      0x166 ./driverlib/eusci_a_uart.o
- .debug_frame   0x0000034a      0x30a ./driverlib/eusci_b_i2c.o
- .debug_frame   0x00000654      0x162 ./driverlib/eusci_b_spi.o
- .debug_frame   0x000007b6       0xee ./driverlib/flashctl.o
- .debug_frame   0x000008a4      0x116 ./driverlib/gpio.o
- .debug_frame   0x000009ba       0x82 ./driverlib/mpy.o
- .debug_frame   0x00000a3c       0xa2 ./driverlib/pmm.o
- .debug_frame   0x00000ade      0x190 ./driverlib/sd24.o
- .debug_frame   0x00000c6e       0x62 ./driverlib/sfr.o
- .debug_frame   0x00000cd0      0x26a ./driverlib/timer_a.o
- .debug_frame   0x00000f3a       0x3a ./driverlib/tlv.o
- .debug_frame   0x00000f74       0x76 ./driverlib/wdt.o
- .debug_frame   0x00000fea       0xee ./communication.o
- .debug_frame   0x000010d8       0x5a ./main.o
- .debug_frame   0x00001132       0xb2 ./metrology-background.o
- .debug_frame   0x000011e4       0x72 ./printf.o
- .debug_frame   0x00001256       0xfe /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
- .debug_frame   0x00001354       0x28 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
- .debug_frame   0x0000137c       0x1e /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .debug_frame   0x00000000       0xc0 ./toolkit/fastarithmetic.o
+ .debug_frame   0x000000c0       0x82 ./driverlib/cs.o
+ .debug_frame   0x00000142      0x162 ./driverlib/eusci_a_spi.o
+ .debug_frame   0x000002a4      0x166 ./driverlib/eusci_a_uart.o
+ .debug_frame   0x0000040a      0x30a ./driverlib/eusci_b_i2c.o
+ .debug_frame   0x00000714      0x162 ./driverlib/eusci_b_spi.o
+ .debug_frame   0x00000876       0xee ./driverlib/flashctl.o
+ .debug_frame   0x00000964      0x116 ./driverlib/gpio.o
+ .debug_frame   0x00000a7a       0x82 ./driverlib/mpy.o
+ .debug_frame   0x00000afc       0xa2 ./driverlib/pmm.o
+ .debug_frame   0x00000b9e      0x190 ./driverlib/sd24.o
+ .debug_frame   0x00000d2e       0x62 ./driverlib/sfr.o
+ .debug_frame   0x00000d90      0x26a ./driverlib/timer_a.o
+ .debug_frame   0x00000ffa       0x3a ./driverlib/tlv.o
+ .debug_frame   0x00001034       0x76 ./driverlib/wdt.o
+ .debug_frame   0x000010aa       0x78 ./communication.o
+ .debug_frame   0x00001122       0x52 ./main.o
+ .debug_frame   0x00001174      0x17c ./metrology-background.o
+ .debug_frame   0x000012f0       0xca ./printf.o
+ .debug_frame   0x000013ba       0xfe /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+ .debug_frame   0x000014b8       0x1e /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .debug_frame   0x000014d6       0x28 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
 
-.debug_str      0x00000000     0xea25
+.debug_str      0x00000000    0x1167e
  *(.debug_str)
- .debug_str     0x00000000     0xa18f ./driverlib/cs.o
+ .debug_str     0x00000000     0x2211 ./toolkit/fastarithmetic.o
+                               0x2389 (størrelse inden forenkling)
+ .debug_str     0x00002211     0x8008 ./driverlib/cs.o
                                0xa34c (størrelse inden forenkling)
- .debug_str     0x0000a18f      0x580 ./driverlib/eusci_a_spi.o
+ .debug_str     0x0000a219      0x580 ./driverlib/eusci_a_spi.o
                                0xa6cd (størrelse inden forenkling)
- .debug_str     0x0000a70f      0x8c4 ./driverlib/eusci_a_uart.o
+ .debug_str     0x0000a799      0x8c4 ./driverlib/eusci_a_uart.o
                                0xaa33 (størrelse inden forenkling)
- .debug_str     0x0000afd3      0xb75 ./driverlib/eusci_b_i2c.o
+ .debug_str     0x0000b05d      0xb75 ./driverlib/eusci_b_i2c.o
                                0xacd9 (størrelse inden forenkling)
- .debug_str     0x0000bb48      0x50d ./driverlib/eusci_b_spi.o
+ .debug_str     0x0000bbd2      0x50d ./driverlib/eusci_b_spi.o
                                0xa6cd (størrelse inden forenkling)
- .debug_str     0x0000c055      0x24e ./driverlib/flashctl.o
+ .debug_str     0x0000c0df      0x24e ./driverlib/flashctl.o
                                0xa396 (størrelse inden forenkling)
- .debug_str     0x0000c2a3      0x523 ./driverlib/gpio.o
+ .debug_str     0x0000c32d      0x523 ./driverlib/gpio.o
                                0xa643 (størrelse inden forenkling)
- .debug_str     0x0000c7c6      0x14b ./driverlib/mpy.o
+ .debug_str     0x0000c850      0x14b ./driverlib/mpy.o
                                0xa26e (størrelse inden forenkling)
- .debug_str     0x0000c911      0x211 ./driverlib/pmm.o
+ .debug_str     0x0000c99b      0x211 ./driverlib/pmm.o
                                0xa357 (størrelse inden forenkling)
- .debug_str     0x0000cb22      0x545 ./driverlib/sd24.o
+ .debug_str     0x0000cbac      0x545 ./driverlib/sd24.o
                                0xa687 (størrelse inden forenkling)
- .debug_str     0x0000d067      0x16e ./driverlib/sfr.o
+ .debug_str     0x0000d0f1      0x16e ./driverlib/sfr.o
                                0xa27d (størrelse inden forenkling)
- .debug_str     0x0000d1d5      0xc72 ./driverlib/timer_a.o
+ .debug_str     0x0000d25f      0xc6d ./driverlib/timer_a.o
                                0xadd1 (størrelse inden forenkling)
- .debug_str     0x0000de47      0x3e1 ./driverlib/tlv.o
+ .debug_str     0x0000decc      0x3e1 ./driverlib/tlv.o
                                0xa4f6 (størrelse inden forenkling)
- .debug_str     0x0000e228      0x158 ./driverlib/wdt.o
+ .debug_str     0x0000e2ad      0x158 ./driverlib/wdt.o
                                0xa273 (størrelse inden forenkling)
- .debug_str     0x0000e380      0x1cb ./communication.o
-                               0xc789 (størrelse inden forenkling)
- .debug_str     0x0000e54b       0x69 ./main.o
-                               0xc8a2 (størrelse inden forenkling)
- .debug_str     0x0000e5b4       0xd9 ./metrology-background.o
-                               0xc7b0 (størrelse inden forenkling)
- .debug_str     0x0000e68d       0x4d ./printf.o
-                               0x1973 (størrelse inden forenkling)
- .debug_str     0x0000e6da      0x1c4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+ .debug_str     0x0000e405      0x1a4 ./communication.o
+                               0xc74e (størrelse inden forenkling)
+ .debug_str     0x0000e5a9       0xae ./main.o
+                               0xc891 (størrelse inden forenkling)
+ .debug_str     0x0000e657     0x2c96 ./metrology-background.o
+                               0xf8a8 (størrelse inden forenkling)
+ .debug_str     0x000112ed       0x4d ./printf.o
+                               0x1986 (størrelse inden forenkling)
+ .debug_str     0x0001133a      0x1c4 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
                                 0x206 (størrelse inden forenkling)
- .debug_str     0x0000e89e      0x13a /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
-                                0x1d3 (størrelse inden forenkling)
- .debug_str     0x0000e9d8       0x4d /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .debug_str     0x000114fe      0x11f /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
                                 0x1b8 (størrelse inden forenkling)
+ .debug_str     0x0001161d       0x61 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+                                0x1d3 (størrelse inden forenkling)
 
-.debug_loc      0x00000000     0x148f
+.debug_loc      0x00000000     0x15a4
  *(.debug_loc)
- .debug_loc     0x00000000       0x64 ./driverlib/cs.o
- .debug_loc     0x00000064      0x150 ./driverlib/eusci_a_spi.o
- .debug_loc     0x000001b4      0x154 ./driverlib/eusci_a_uart.o
- .debug_loc     0x00000308      0x2f8 ./driverlib/eusci_b_i2c.o
- .debug_loc     0x00000600      0x150 ./driverlib/eusci_b_spi.o
- .debug_loc     0x00000750       0xdc ./driverlib/flashctl.o
- .debug_loc     0x0000082c      0x104 ./driverlib/gpio.o
- .debug_loc     0x00000930       0x64 ./driverlib/mpy.o
- .debug_loc     0x00000994       0x78 ./driverlib/pmm.o
- .debug_loc     0x00000a0c      0x179 ./driverlib/sd24.o
- .debug_loc     0x00000b85       0x50 ./driverlib/sfr.o
- .debug_loc     0x00000bd5      0x250 ./driverlib/timer_a.o
- .debug_loc     0x00000e25       0x28 ./driverlib/tlv.o
- .debug_loc     0x00000e4d       0x64 ./driverlib/wdt.o
- .debug_loc     0x00000eb1       0xc4 ./communication.o
- .debug_loc     0x00000f75       0x3c ./main.o
- .debug_loc     0x00000fb1       0x94 ./metrology-background.o
- .debug_loc     0x00001045       0x5c ./printf.o
- .debug_loc     0x000010a1      0x25f /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
- .debug_loc     0x00001300      0x130 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
- .debug_loc     0x00001430       0x5f /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .debug_loc     0x00000000       0xa8 ./toolkit/fastarithmetic.o
+ .debug_loc     0x000000a8       0x64 ./driverlib/cs.o
+ .debug_loc     0x0000010c      0x150 ./driverlib/eusci_a_spi.o
+ .debug_loc     0x0000025c      0x154 ./driverlib/eusci_a_uart.o
+ .debug_loc     0x000003b0      0x2f8 ./driverlib/eusci_b_i2c.o
+ .debug_loc     0x000006a8      0x150 ./driverlib/eusci_b_spi.o
+ .debug_loc     0x000007f8       0xdc ./driverlib/flashctl.o
+ .debug_loc     0x000008d4      0x104 ./driverlib/gpio.o
+ .debug_loc     0x000009d8       0x64 ./driverlib/mpy.o
+ .debug_loc     0x00000a3c       0x78 ./driverlib/pmm.o
+ .debug_loc     0x00000ab4      0x179 ./driverlib/sd24.o
+ .debug_loc     0x00000c2d       0x50 ./driverlib/sfr.o
+ .debug_loc     0x00000c7d      0x250 ./driverlib/timer_a.o
+ .debug_loc     0x00000ecd       0x28 ./driverlib/tlv.o
+ .debug_loc     0x00000ef5       0x64 ./driverlib/wdt.o
+ .debug_loc     0x00000f59       0x58 ./communication.o
+ .debug_loc     0x00000fb1       0x28 ./main.o
+ .debug_loc     0x00000fd9      0x131 ./metrology-background.o
+ .debug_loc     0x0000110a       0xac ./printf.o
+ .debug_loc     0x000011b6      0x25f /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
+ .debug_loc     0x00001415       0x5f /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .debug_loc     0x00001474      0x130 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1778,62 +1880,75 @@ OUTPUT(EnergyAgent-1Ch.elf elf32-msp430)
 .debug_ranges   0x00000000       0x4c
  .debug_ranges  0x00000000       0x14 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crt0.o
  .debug_ranges  0x00000014       0x18 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
- .debug_ranges  0x0000002c        0x8 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
- .debug_ranges  0x00000034        0x8 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .debug_ranges  0x0000002c        0x8 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .debug_ranges  0x00000034        0x8 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
  .debug_ranges  0x0000003c       0x10 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/crtn.o
 
-.debug_macro    0x00000000     0x5961
- .debug_macro   0x00000000       0xda ./driverlib/cs.o
- .debug_macro   0x000000da      0x4f6 ./driverlib/cs.o
- .debug_macro   0x000005d0       0x10 ./driverlib/cs.o
- .debug_macro   0x000005e0       0x16 ./driverlib/cs.o
- .debug_macro   0x000005f6       0x58 ./driverlib/cs.o
- .debug_macro   0x0000064e       0xb8 ./driverlib/cs.o
- .debug_macro   0x00000706      0x1ed ./driverlib/cs.o
- .debug_macro   0x000008f3     0x1968 ./driverlib/cs.o
- .debug_macro   0x0000225b     0x1c18 ./driverlib/cs.o
- .debug_macro   0x00003e73       0x16 ./driverlib/cs.o
- .debug_macro   0x00003e89       0x44 ./driverlib/cs.o
- .debug_macro   0x00003ecd      0x209 ./driverlib/cs.o
- .debug_macro   0x000040d6       0x22 ./driverlib/cs.o
- .debug_macro   0x000040f8       0x28 ./driverlib/cs.o
- .debug_macro   0x00004120       0x4c ./driverlib/cs.o
- .debug_macro   0x0000416c       0x4c ./driverlib/cs.o
- .debug_macro   0x000041b8       0x12 ./driverlib/cs.o
- .debug_macro   0x000041ca       0x43 ./driverlib/cs.o
- .debug_macro   0x0000420d       0xa3 ./driverlib/cs.o
- .debug_macro   0x000042b0       0x10 ./driverlib/cs.o
- .debug_macro   0x000042c0       0xd4 ./driverlib/eusci_a_spi.o
- .debug_macro   0x00004394       0x81 ./driverlib/eusci_a_spi.o
- .debug_macro   0x00004415       0xd4 ./driverlib/eusci_a_uart.o
- .debug_macro   0x000044e9      0x11d ./driverlib/eusci_a_uart.o
- .debug_macro   0x00004606       0xd4 ./driverlib/eusci_b_i2c.o
- .debug_macro   0x000046da      0x103 ./driverlib/eusci_b_i2c.o
- .debug_macro   0x000047dd       0xd4 ./driverlib/eusci_b_spi.o
- .debug_macro   0x000048b1       0x81 ./driverlib/eusci_b_spi.o
- .debug_macro   0x00004932       0xd4 ./driverlib/flashctl.o
- .debug_macro   0x00004a06       0x2e ./driverlib/flashctl.o
- .debug_macro   0x00004a34       0xd4 ./driverlib/gpio.o
- .debug_macro   0x00004b08      0x110 ./driverlib/gpio.o
- .debug_macro   0x00004c18       0xd4 ./driverlib/mpy.o
- .debug_macro   0x00004cec       0x22 ./driverlib/mpy.o
- .debug_macro   0x00004d0e       0xd4 ./driverlib/pmm.o
- .debug_macro   0x00004de2       0x40 ./driverlib/pmm.o
- .debug_macro   0x00004e22       0xd4 ./driverlib/sd24.o
- .debug_macro   0x00004ef6       0xc5 ./driverlib/sd24.o
- .debug_macro   0x00004fbb       0xd4 ./driverlib/sfr.o
- .debug_macro   0x0000508f       0x2e ./driverlib/sfr.o
- .debug_macro   0x000050bd       0xd4 ./driverlib/timer_a.o
- .debug_macro   0x00005191      0x175 ./driverlib/timer_a.o
- .debug_macro   0x00005306       0xd4 ./driverlib/tlv.o
- .debug_macro   0x000053da       0x82 ./driverlib/tlv.o
- .debug_macro   0x0000545c       0xd4 ./driverlib/wdt.o
- .debug_macro   0x00005530       0x2e ./driverlib/wdt.o
- .debug_macro   0x0000555e      0x12d ./communication.o
- .debug_macro   0x0000568b       0x58 ./communication.o
- .debug_macro   0x000056e3      0x127 ./main.o
- .debug_macro   0x0000580a      0x13d ./metrology-background.o
- .debug_macro   0x00005947       0x1a ./printf.o
+.debug_macro    0x00000000     0x6191
+ .debug_macro   0x00000000       0x42 ./toolkit/fastarithmetic.o
+ .debug_macro   0x00000042      0x4f6 ./toolkit/fastarithmetic.o
+ .debug_macro   0x00000538       0x16 ./toolkit/fastarithmetic.o
+ .debug_macro   0x0000054e       0x44 ./toolkit/fastarithmetic.o
+ .debug_macro   0x00000592      0x209 ./toolkit/fastarithmetic.o
+ .debug_macro   0x0000079b       0xda ./driverlib/cs.o
+ .debug_macro   0x00000875       0x10 ./driverlib/cs.o
+ .debug_macro   0x00000885       0x16 ./driverlib/cs.o
+ .debug_macro   0x0000089b       0x58 ./driverlib/cs.o
+ .debug_macro   0x000008f3       0xb8 ./driverlib/cs.o
+ .debug_macro   0x000009ab      0x1ed ./driverlib/cs.o
+ .debug_macro   0x00000b98     0x1968 ./driverlib/cs.o
+ .debug_macro   0x00002500     0x1c18 ./driverlib/cs.o
+ .debug_macro   0x00004118       0x22 ./driverlib/cs.o
+ .debug_macro   0x0000413a       0x28 ./driverlib/cs.o
+ .debug_macro   0x00004162       0x4c ./driverlib/cs.o
+ .debug_macro   0x000041ae       0x4c ./driverlib/cs.o
+ .debug_macro   0x000041fa       0x12 ./driverlib/cs.o
+ .debug_macro   0x0000420c       0x43 ./driverlib/cs.o
+ .debug_macro   0x0000424f       0xa3 ./driverlib/cs.o
+ .debug_macro   0x000042f2       0x10 ./driverlib/cs.o
+ .debug_macro   0x00004302       0xd4 ./driverlib/eusci_a_spi.o
+ .debug_macro   0x000043d6       0x81 ./driverlib/eusci_a_spi.o
+ .debug_macro   0x00004457       0xd4 ./driverlib/eusci_a_uart.o
+ .debug_macro   0x0000452b      0x11d ./driverlib/eusci_a_uart.o
+ .debug_macro   0x00004648       0xd4 ./driverlib/eusci_b_i2c.o
+ .debug_macro   0x0000471c      0x103 ./driverlib/eusci_b_i2c.o
+ .debug_macro   0x0000481f       0xd4 ./driverlib/eusci_b_spi.o
+ .debug_macro   0x000048f3       0x81 ./driverlib/eusci_b_spi.o
+ .debug_macro   0x00004974       0xd4 ./driverlib/flashctl.o
+ .debug_macro   0x00004a48       0x2e ./driverlib/flashctl.o
+ .debug_macro   0x00004a76       0xd4 ./driverlib/gpio.o
+ .debug_macro   0x00004b4a      0x110 ./driverlib/gpio.o
+ .debug_macro   0x00004c5a       0xd4 ./driverlib/mpy.o
+ .debug_macro   0x00004d2e       0x22 ./driverlib/mpy.o
+ .debug_macro   0x00004d50       0xd4 ./driverlib/pmm.o
+ .debug_macro   0x00004e24       0x40 ./driverlib/pmm.o
+ .debug_macro   0x00004e64       0xd4 ./driverlib/sd24.o
+ .debug_macro   0x00004f38       0xc5 ./driverlib/sd24.o
+ .debug_macro   0x00004ffd       0xd4 ./driverlib/sfr.o
+ .debug_macro   0x000050d1       0x2e ./driverlib/sfr.o
+ .debug_macro   0x000050ff       0xd4 ./driverlib/timer_a.o
+ .debug_macro   0x000051d3      0x175 ./driverlib/timer_a.o
+ .debug_macro   0x00005348       0xd4 ./driverlib/tlv.o
+ .debug_macro   0x0000541c       0x82 ./driverlib/tlv.o
+ .debug_macro   0x0000549e       0xd4 ./driverlib/wdt.o
+ .debug_macro   0x00005572       0x2e ./driverlib/wdt.o
+ .debug_macro   0x000055a0      0x12d ./communication.o
+ .debug_macro   0x000056cd       0x58 ./communication.o
+ .debug_macro   0x00005725      0x130 ./main.o
+ .debug_macro   0x00005855       0x10 ./main.o
+ .debug_macro   0x00005865      0x235 ./metrology-background.o
+ .debug_macro   0x00005a9a      0x166 ./metrology-background.o
+ .debug_macro   0x00005c00       0x52 ./metrology-background.o
+ .debug_macro   0x00005c52       0x16 ./metrology-background.o
+ .debug_macro   0x00005c68       0x43 ./metrology-background.o
+ .debug_macro   0x00005cab      0x19c ./metrology-background.o
+ .debug_macro   0x00005e47      0x2a3 ./metrology-background.o
+ .debug_macro   0x000060ea       0x10 ./metrology-background.o
+ .debug_macro   0x000060fa       0x35 ./metrology-background.o
+ .debug_macro   0x0000612f       0x10 ./metrology-background.o
+ .debug_macro   0x0000613f       0x16 ./metrology-background.o
+ .debug_macro   0x00006155       0x22 ./metrology-background.o
+ .debug_macro   0x00006177       0x1a ./printf.o
 
 .debug_line.text.udivmodsi4
                 0x00000000       0x72
@@ -1865,16 +1980,16 @@ OUTPUT(EnergyAgent-1Ch.elf elf32-msp430)
  .debug_line_end
                 0x00000000        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/430/libgcc.a(lib2divSI.o)
  .debug_line_end
-                0x00000000        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
- .debug_line_end
                 0x00000000        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
-
-.debug_line.text.memmove
-                0x00000000       0x3e
- .debug_line.text.memmove
-                0x00000000       0x3e /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .debug_line_end
+                0x00000000        0x0 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
 
 .debug_line.text.memset
                 0x00000000       0x20
  .debug_line.text.memset
                 0x00000000       0x20 /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+
+.debug_line.text.memmove
+                0x00000000       0x3e
+ .debug_line.text.memmove
+                0x00000000       0x3e /home/omn/ti/gcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)

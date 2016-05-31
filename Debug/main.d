@@ -8,7 +8,7 @@ main.d: ../main.c .././driverlib/driverlib.h \
  .././driverlib/flashctl.h .././driverlib/gpio.h .././driverlib/mpy.h \
  .././driverlib/pmm.h .././driverlib/sd24.h .././driverlib/sfr.h \
  .././driverlib/timer_a.h .././driverlib/tlv.h .././driverlib/wdt.h \
- ../communication.h
+ ../communication.h ../metrology-background.h
 
 .././driverlib/driverlib.h:
 
@@ -53,3 +53,5 @@ main.d: ../main.c .././driverlib/driverlib.h \
 .././driverlib/wdt.h:
 
 ../communication.h:
+
+../metrology-background.h:

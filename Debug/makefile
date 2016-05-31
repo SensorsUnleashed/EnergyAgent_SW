@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include toolkit/subdir.mk
 -include driverlib/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -29,7 +30,7 @@ all: EnergyAgent-1Ch.elf
 EnergyAgent-1Ch.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross GCC Linker'
-	msp430-elf-gcc -L/home/omn/ti/gcc/include -mmcu=msp430i2041 -v -Wl,-Map,EnergyAgent-1Ch.map -o "EnergyAgent-1Ch.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	msp430-elf-gcc -L/home/omn/ti/gcc/include -L/home/omn/ti/gcc/msp430-elf/include -mmcu=msp430i2041 -v -Wl,-Map,EnergyAgent-1Ch.map -o "EnergyAgent-1Ch.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

@@ -30,7 +30,7 @@
 									<listOptionValue builtIn="false" value="/home/omn/ti/gcc/include"/>
 									<listOptionValue builtIn="false" value="/home/omn/ti/gcc/msp430-elf/include"/>
 								</option>
-								<option id="gnu.c.compiler.option.misc.other.715836015" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -mmcu=msp430i2041 -fno-builtin-printf -fno-builtin-puts -fno-builtin-putc" valueType="string"/>
+								<option id="gnu.c.compiler.option.misc.other.715836015" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -mmcu=msp430i2041 -fno-builtin-printf -fno-builtin-puts -fno-builtin-putc -Winline" valueType="string"/>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1316948956" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__MSP430i2041__"/>
 								</option>
@@ -39,6 +39,9 @@
 								<option id="gnu.c.compiler.option.misc.verbose.619672549" name="Verbose (-v)" superClass="gnu.c.compiler.option.misc.verbose" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="gnu.c.compiler.option.debugging.other.1973007674" name="Other debugging flags" superClass="gnu.c.compiler.option.debugging.other" useByScannerDiscovery="false" value="-gdwarf-2 -ggdb" valueType="string"/>
 								<option id="gnu.c.compiler.option.optimization.flags.782073356" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="gnu.c.compiler.option.warnings.extrawarn.1341016913" name="Extra warnings (-Wextra)" superClass="gnu.c.compiler.option.warnings.extrawarn" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="gnu.c.compiler.option.warnings.wconversion.1811628999" name="Implicit conversion warnings (-Wconversion)" superClass="gnu.c.compiler.option.warnings.wconversion" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="gnu.c.compiler.option.misc.pic.1159454159" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1452493759" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1544691443" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
@@ -48,6 +51,7 @@
 							<tool command="gcc" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GLDErrorParser" id="cdt.managedbuild.tool.gnu.cross.c.linker.1063844832" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
 								<option id="gnu.c.link.option.paths.91457988" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="/home/omn/ti/gcc/include"/>
+									<listOptionValue builtIn="false" value="/home/omn/ti/gcc/msp430-elf/include"/>
 								</option>
 								<option id="gnu.c.link.option.ldflags.103263584" name="Linker flags" superClass="gnu.c.link.option.ldflags" value="-mmcu=msp430i2041 -v -Wl,-Map,${ProjName}.map" valueType="string"/>
 								<option id="gnu.c.link.option.defname.147259060" name="DEF file name (-Wl,--output-def=)" superClass="gnu.c.link.option.defname" value="" valueType="string"/>

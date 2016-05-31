@@ -8,6 +8,10 @@
 #ifndef METROLOGY_BACKGROUND_H_
 #define METROLOGY_BACKGROUND_H_
 
+
+#define OSR_FILTER 256
+
 void metrology_start();
-metrology_print_status();
+void metrology_print_status();
+
 #endif /* METROLOGY_BACKGROUND_H_ */

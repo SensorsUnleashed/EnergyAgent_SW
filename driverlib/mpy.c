@@ -55,7 +55,7 @@ void MPY_setOperandOne8Bit(uint8_t multiplicationType,
     HWREG8(MPY_BASE + OFS_MPY + multiplicationType) = operand;
 }
 
-void MPY_setOperandOne16Bit(uint8_t multiplicationType,
+void inline MPY_setOperandOne16Bit(uint8_t multiplicationType,
                             uint16_t operand)
 {
     HWREG16(MPY_BASE + OFS_MPY + multiplicationType) = operand;
@@ -66,12 +66,12 @@ void MPY_setOperandTwo8Bit(uint8_t operand)
     HWREG8(MPY_BASE + OFS_OP2) = operand;
 }
 
-void MPY_setOperandTwo16Bit(uint16_t operand)
+void inline MPY_setOperandTwo16Bit(uint16_t operand)
 {
     HWREG16(MPY_BASE + OFS_OP2) = operand;
 }
 
-uint32_t MPY_getResult(void)
+uint32_t inline MPY_getResult(void)
 {
     uint32_t result;
     result = HWREG16(MPY_BASE + OFS_RESLO);

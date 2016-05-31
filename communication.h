@@ -12,5 +12,5 @@
 #include "stdint.h"
 
 void printf(char *, ...);
-uint16_t fifo_getavilable();
+void tx();
 #endif /* COMMUNICATION_H_ */

@@ -9,31 +9,23 @@ static uint8_t* tx_readptr = &tx_buf[0];		//Where new data should be send from
 static uint8_t* tx_writeptr = &tx_buf[0];		//Where new data should be added
 static uint8_t* tx_end = &tx_buf[TXBUF_LEN-1];
 static uint8_t* tx_start = &tx_buf[0];
-static uint16_t tx_buff_count = 0;
 
 void fifo_add(uint8_t byte){
-	if(tx_buff_count > TXBUF_LEN) return;
 	*tx_writeptr++ = byte;
-	tx_buff_count++;
 	if(tx_writeptr > tx_end) tx_writeptr = tx_start;
-	UCA0IE |= UCTXIE;
 }
 
-/* return 0 when no more bytes are in the fifo*/
-uint16_t fifo_get(uint8_t* byte){
-	uint8_t ret = tx_buff_count;
-	if(tx_buff_count){
-		*byte = *tx_readptr++;
-		tx_buff_count--;
+void tx(){
+	if(tx_writeptr != tx_readptr){
+        //Poll for transmit interrupt flag
+        if(!(UCA0IFG & UCTXIFG))
+        {
+        	return;
+        }
+		UCA0TXBUF = *tx_readptr++;
 		if(tx_readptr > tx_end) tx_readptr = tx_start;
 	}
-	return ret;
 }
-
-uint16_t fifo_getavilable(){
-	return TXBUF_LEN - tx_buff_count;
-}
-
 /**
  * puts() is used by printf() to display or send a string.. This function
  *     determines where printf prints to. For this case it sends a string
@@ -74,12 +66,12 @@ __attribute__((interrupt(USCI_A0_VECTOR))) void USCI_A0_ISR(void) {
 		UCA0TXBUF = UCA0RXBUF;	//Echo what comes in
 		break;
 	case USCI_UART_UCTXIFG:
-		if(fifo_get(&byte)){
-			UCA0TXBUF = byte;
-		}
-		else{	//Nothing more to send
-            UCA0IE &= ~UCTXIE;
-		}
+//		if(fifo_get(&byte)){
+//			UCA0TXBUF = byte;
+//		}
+//		else{	//Nothing more to send
+//            UCA0IE &= ~UCTXIE;
+//		}
 		break;
 	case USCI_UART_UCSTTIFG: break;
 	case USCI_UART_UCTXCPTIFG: break;

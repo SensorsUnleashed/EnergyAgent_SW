@@ -20,24 +20,30 @@
 void putc(unsigned);
 void puts(char *);
 
-static const unsigned long dv[] = {
+static const unsigned long long dv[] = {
+
+		100000000000000, // +0
+		10000000000000, // +1
+		1000000000000, // +2
+		100000000000, // +3
+		10000000000, // +4
 //  4294967296      // 32 bit unsigned max
-		1000000000,// +0
-		100000000, // +1
-		10000000, // +2
-		1000000, // +3
-		100000, // +4
+		1000000000,// +5
+		100000000, // +6
+		10000000, // +7
+		1000000, // +8
+		100000, // +9
 //       65535      // 16 bit unsigned max
-		10000, // +5
-		1000, // +6
-		100, // +7
-		10, // +8
-		1, // +9
+		10000, // +10
+		1000, // +11
+		100, // +12
+		10, // +13
+		1, // +14
 		};
 
-static void xtoa(unsigned long x, const unsigned long *dp) {
+static void xtoa(unsigned long long x, const unsigned long long*dp) {
 	char c;
-	unsigned long d;
+	unsigned long long d;
 	if (x) {
 		while (x < *dp)
 			++dp;
@@ -63,6 +69,7 @@ void printf(char *format, ...)
 	char c;
 	int i;
 	long n;
+	long long r;
 
 	va_list a;
 	va_start(a, format);
@@ -79,14 +86,20 @@ void printf(char *format, ...)
 				case 'u':// 16 bit Unsigned
 					i = va_arg(a, int);
 					if(c == 'i' && i < 0) i = -i, putc('-');
-					xtoa((unsigned)i, dv + 5);
+					xtoa((unsigned)i, dv + 10);
 				break;
 				case 'l':// 32 bit Long
 				case 'n':// 32 bit uNsigned loNg
 					n = va_arg(a, long);
 					if(c == 'l' && n < 0) n = -n, putc('-');
-					xtoa((unsigned long)n, dv);
+					xtoa((unsigned long)n, dv+5);
 				break;
+				case 'y':// 64 bit signed long long
+				case 'r':// 64 bit unsigned long long
+					r = va_arg(a, long long);
+					if(c == 'y' && n < 0) r = -r, putc('-');
+					xtoa((unsigned long long)r, dv);
+					break;
 				case 'x':// 16 bit heXadecimal
 					i = va_arg(a, int);
 					puth(i >> 12);
