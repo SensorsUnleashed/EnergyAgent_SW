@@ -16,10 +16,17 @@ void tlv_setup (void)
 	if(!TLV_performChecksumCheck()) return;
 
 	uint16_t *data_address;
-	TLV_getInfo(TLV_REF_CALIBRATION_REFCAL1, 0, &data_address);
-	REFCAL1 = *(uint8_t *)data_address;
-	TLV_getInfo(TLV_REF_CALIBRATION_REFCAL0, 0, &data_address);
-	REFCAL0 = *(uint8_t *)data_address;
+//	TLV_getInfo(TLV_REF_CALIBRATION_REFCAL1, 0, &data_address);
+//	REFCAL1 = *(uint8_t *)data_address;
+//	TLV_getInfo(TLV_REF_CALIBRATION_REFCAL0, 0, &data_address);
+//	REFCAL0 = *(uint8_t *)data_address;
+
+	/* Taken from the TI */
+    REFCAL0 = *((uint8_t *)(TLV_START + TLV_CAL_REFCAL0));
+    REFCAL1 = 0x00;
+    SD24TRIM = 0x0C;
+
+
 	TLV_getInfo(TLV_DCO_CALIBRATION_CSIRFCAL, 0, &data_address);
 	CSIRFCAL = *(uint8_t *)data_address;
 	TLV_getInfo(TLV_DCO_CALIBRATION_CSIRTCAL, 0, &data_address);
@@ -30,6 +37,8 @@ void tlv_setup (void)
 	CSERTCAL = *(uint8_t *)data_address;
 	TLV_getInfo(TLV_SD24_CALIBRATION_TAG, 0, &data_address);
 	SD24TRIM = *(uint8_t *)data_address;
+
+
 }
 
 void uart_setup(){

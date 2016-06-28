@@ -79,101 +79,6 @@ void sqac64_24_fast(int64_t* z, int32_t x)
 	);
 }
 
-//(al)*(bh,bl) = al*bl + ( al*bh )*2^16
-void mac64_16_24_fast(int64_t *z, int16_t x, int32_t y){
-
-	__asm__ volatile(
-			"__MPY=0x130 \n"
-			"__OP2=0x138 \n"
-			"__RESLO=0x13a \n"
-			"__RESHI=0x13c \n"
-
-			//Find out the sign of the calculation
-		    " clr	R4 \n"
-		    " tst	%B[y] \n"
-		    " jge	mac64_16_24_1 \n"
-		    // The 24 bit y is negative
-		    " xor	#1,R4 \n"
-		    " inv	%B[y] \n"
-			" inv	%A[y] \n"
-		    " add	#1,%A[y] \n"
-		    " adc	%B[y] \n"
-			"mac64_16_24_1: \n"
-		    " tst	%[x] \n"
-		    " jge	mac64_16_24_2 \n"
-		    // The 16 bit x is negative
-		    " xor	#1,R4 \n"
-		    " inv	%[x] \n"
-		    " add	#1,%[x] \n"
-			"mac64_16_24_2: \n"
-			" mov   %[x],&__MPY \n"
-			" tst	R4 \n"
-			" jeq	mac64_16_24_3 \n"
-			// The answer to the real multiply will be negative, so subtract the unsigned one from the sum
-			" mov.w	%B[y],&__OP2 \n"
-			" mov.w	#__RESLO,R4 \n"		//Put address of RESLO in R4
-			" sub.w	@R4+,%B[res] \n"	//Sub RESLO from 2 byte of z, point R4 to RESHI
-			" subc.w	@R4,%C[res] \n"	//Sub RESHI from 3 byte of z
-			" subc.w	#0,%D[res] \n"	//Take care of carry
-
-		    " mov.w   %A[y],&__OP2 \n"
-			" sub.w   #2,R4 \n"
-			" sub.w	@R4+,%A[res] \n"
-			" subc.w  @R4,%B[res] \n"
-			" subc.w	#0,%C[res] \n"
-			" subc.w	#0,%D[res] \n"
-
-//			" mov	%A[y], &__OP2 \n"
-//			" sub	&__RESLO, %A[res] \n"
-//			" subc	&__RESHI, %B[res] \n"
-//			" subc	#0, %C[res] \n"
-//			" subc	#0, %D[res] \n"
-//
-//			//x * yh * 2^16
-//			" mov	%B[y], &__OP2 \n"
-//			" sub	&__RESLO, %B[res] \n"
-//			" addc	&__RESHI, %C[res] \n"
-//			" subc	#0, %D[res] \n"
-
-			" jmp	done \n"
-
-			"mac64_16_24_3: \n"
-			// The answer to the real multiply will be positive, so add the unsigned one to the sum
-			" mov	%A[y], &__OP2 \n"
-			" add	&__RESLO, %A[res] \n"
-			" addc	&__RESHI, %B[res] \n"
-			" adc	%C[res] \n"
-			" adc	%D[res] \n"
-
-			//x * yh * 2^16
-			" mov	%B[y], &__OP2 \n"
-			" add	&__RESLO, %B[res] \n"
-			" addc	&__RESHI, %C[res] \n"
-			" adc	%D[res] \n"
-
-
-
-//			//x * yl
-//			" mov	%[x], &__MPY \n"
-//			" mov	%A[y], &__OP2 \n"
-//			" add	&__RESLO, %A[res] \n"
-//			" addc	&__RESHI, %B[res] \n"
-//			" adc	%C[res] \n"
-//			" adc	%D[res] \n"
-//
-//			//x * yh * 2^16
-//			" mov	%B[y], &__OP2 \n"
-//			" add	&__RESLO, %B[res] \n"
-//			" addc	&__RESHI, %C[res] \n"
-//			" adc	%D[res] \n"
-			"done: \n"
-
-			: [res] "=m"(*z)			//Output Operands
-			: [x] "r"(x), [y] "r"(y)	//Input Operands
-			: "R4" 						//(Sign flag) Clobbers
-			);
-}
-
 int32_t mul48_32_16_fast(int32_t x, uint16_t y){
 
 
@@ -231,6 +136,58 @@ int32_t mul48_32_16_fast(int32_t x, uint16_t y){
 			);
 	return x;
 }
+
+int32_t imul16(register int16_t x, register int16_t y)
+{
+    int32_t z;
+
+    __asm__ (
+		"__MPY=0x130 \n"
+		"__MPYS=0x132 \n"
+		"__MAC=0x134 \n"
+		"__MACS=0x136 \n"
+		"__OP2=0x138 \n"
+		"__RESLO=0x13a \n"
+		"__RESHI=0x13c \n"
+		"__SUMEXT=0x13e \n"
+        " push.w  r2 \n"
+        " dint \n"
+        " mov   %[x],&__MPYS \n"
+        " mov   %[y],&__OP2 \n"
+        " mov   &__RESHI,%B[z] \n"
+        " mov   &__RESLO,%A[z] \n"
+        " pop.w r2 \n"
+        : [z] "=r"(z)
+        : [x] "r"(x), [y] "r"(y));
+    return z;
+}
+
+uint32_t umul16(register uint16_t x, register uint16_t y)
+{
+    int32_t z;
+
+    __asm__ (
+		"__MPY=0x130 \n"
+		"__MPYS=0x132 \n"
+		"__MAC=0x134 \n"
+		"__MACS=0x136 \n"
+		"__OP2=0x138 \n"
+		"__RESLO=0x13a \n"
+		"__RESHI=0x13c \n"
+		"__SUMEXT=0x13e \n"
+        " push.w  r2 \n"
+        " dint \n"
+        " mov   %[x],&__MPY \n"
+        " mov   %[y],&__OP2 \n"
+        " mov   &__RESHI,%B[z] \n"
+        " mov   &__RESLO,%A[z] \n"
+        " pop.w r2 \n"
+        : [z] "=r"(z)
+        : [x] "r"(x), [y] "r"(y));
+    return z;
+}
+
+
 //
 ///*
 // * When entering the function. arg_a is put in R12+R13, arg_b is in R14+R15
@@ -252,6 +209,8 @@ uint64_t mul32(uint32_t arg_a, uint32_t arg_b) {	//switch because this is the ne
 			"__SUMEXT=0x13e \n"
 
 			//" push	R4 \n"		// PUSH R4 to the stack.
+		    " push.w  SR \n"
+		    " dint \n"
 
 			// Fill OP1 = MPY = 0x130 with al
 			" mov	R12, &__MPY \n"		// MOV al,MPY
@@ -293,6 +252,7 @@ uint64_t mul32(uint32_t arg_a, uint32_t arg_b) {	//switch because this is the ne
 			" add	&__RESLO, %C[res] \n"
 			//" addc	&__RESHI, R15 \n"	// ADDC RESHI,bh
 			" addc	&__RESHI, %D[res] \n"
+			" pop.w   SR \n"
 			//" pop	R4 \n"	//);				// POP R4
 			: [res] "=r" (ret)	//Output Operands	("=r" => output in registers (Default from R12)
 			: 					//Input Operands
@@ -334,3 +294,67 @@ int16_t dc_filter(int32_t *p, int16_t x)
         : [p] "r"(p), [z] "r"(z));
     return x;
 }
+
+int32_t div48(int16_t x[3], int16_t y)
+{
+    /* Divide a 16 bit integer into a 48 bit one. Expect the answer to be no
+       greater than 32 bits, so return the answer as a 32 bit integer.
+       A somewhat domain specific divide operation, but pretty useful when
+       handling dot products. */
+    int32_t x1;
+    int32_t z;
+
+    /* Avoid any divide by zero trouble */
+    if (y == 0)
+        return 0;
+    x1 = x[2]%y;
+    x1 <<= 16;
+    x1 |= (uint16_t) x[1];
+    z = x1/y;
+    x1 = x1%y;
+    x1 <<= 16;
+    x1 |= (uint16_t) x[0];
+    z = (z << 16) + x1/y;
+    return z;
+}
+
+uint32_t isqrt32(uint32_t h)
+{
+    uint32_t x;
+    uint32_t y;
+    int i;
+
+    x = 0x80000000;
+    y = 0;
+    i = 32;
+    __asm__ volatile(
+        "1: \n"
+        " setc \n"
+        " rlc   %A[x] \n"
+        " rlc   %B[x] \n"
+        " sub   %A[x],%A[y] \n"
+        " subc  %B[x],%B[y] \n"
+        " jhs   2f \n"
+        " add   %A[x],%A[y] \n"
+        " addc  %B[x],%B[y] \n"
+        " sub   #2,%A[x] \n"
+        "2: \n"
+        " inc   %A[x] \n"
+        " rla   %A[h] \n"
+        " rlc   %B[h] \n"
+        " rlc   %A[y] \n"
+        " rlc   %B[y] \n"
+        " rla   %A[h] \n"
+        " rlc   %B[h] \n"
+        " rlc   %A[y] \n"
+        " rlc   %B[y] \n"
+        " dec   %[i] \n"
+        " jne   1b \n"
+        : [x] "+r"(x), [y] "+r"(y)
+        : [h] "r"(h), [i] "r"(i)
+
+    );
+
+    return  x;
+}
+

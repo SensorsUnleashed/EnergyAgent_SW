@@ -170,12 +170,76 @@ static int16_t evaluate_mains_frequency(void){
 	return x;
 }
 
+/* We store voltages in 1mV steps. A 32 bit unsigned number supports the range
+   1mV to 2147483.647V, which seems OK for all forseeable uses. */
+typedef int32_t rms_voltage_t;
+
+static rms_voltage_t evaluate_rms_voltage(int dp){
+
+    /* The accumulated voltage is 16bitsx16bits*(~4096). So its a 43/44 bit number.
+       After dividing by (~4096) its a 31/32 bit number.
+       After we take the square root of the 32 bit number its a 16.16 bit number. */
+	int32_t tmp = div48(metrology.dot_prod[dp].V_sq, metrology.current.dot_prod[dp].sample_count);
+
+    /* The ac_offset removes the effect of the AWGN from the ADC front end. AWGN is orthogonal to everything but a true copy
+       of itself. This means means we need to subtract the ac_offset in a "Pythagoras" manner", while still squared. */
+
+	rms_voltage_t x = isqrt32(tmp);
+	x >>= 16;	//Remove the least significant bits. XXXX.XX mv
+	x = umul16(x, 49575);
+	x >>= 11;
+
+	//Vmv = VADC * 49575/2^11
+	return x;
+}
+
+/* We store currents in 1uA steps. A 32 bit unsigned number supports the range
+   1uA to 2147.483647A, which seems far more than will ever be needed. */
+typedef uint32_t rms_current_t;
+
+//Current range: 0 - 22.5A => 0 - 22500000uA
+//A 32bit unsigned, each LSB equas 1uA -> range 0 - 4294967296uA = 0 - 4294.967296A
+static rms_current_t evaluate_rms_current(int dp){
+    uint64_t tmp;
+
+    tmp = *metrology.current.dot_prod[dp].I_sq/metrology.current.dot_prod[dp].sample_count;
+
+    //Returns Q32.32 - we only need Q22.xx to hold support a range from ADC 0 - 2600000 eq 0 - 22.5A
+    //In praksis this means that we have a maximum Q22.32 bit value
+    tmp = isqrt64(tmp);
+
+    //Lets reduce the fractions to allow for a 32bit fix point integer for further calculations
+    //21bit reduction in the fractions means we have a Q22.10 value.
+    tmp >>= 22;
+
+    //ADC -> uA = (ADC * 1171875) >> 16.
+    tmp = mul64u_32_32(tmp, 1171875) >> 26;
+
+    return (rms_current_t)tmp;
+}
+
+static uint32_t evaluate_active_power(int dp){
+	uint64_t tmp;
+    //x[ch] = div_ac_power(phase->metrology.current[ch].dot_prod[dp].P_active, phase->metrology.current[ch].dot_prod[dp].sample_count);
+	//x[ch] >>= 9;
+    //x[ch] = mul48_32_16(x[ch], phase_cal->current[ch].P_scale_factor);
+
+	//tmp max 36bit	including sign
+	tmp = *metrology.current.dot_prod[dp].P_active/(metrology.current.dot_prod[dp].sample_count+10);
+	tmp >>= 9;
+	tmp = mul64u_32_32(tmp, 1869969) >> 23;
+
+	return tmp;
+}
+
 void metrology_print_status(){
 	uint16_t p_status;
 	volatile frequency_t frequency;
 
-	volatile int64_t P_active = 0;
-	uint64_t t_num;
+	uint32_t P_active = 0;
+	uint32_t p_apparent = 0;
+	uint32_t V_rms = 0;
+	uint32_t I_rms = 0;
 
 	p_status = status;
 	int dp;
@@ -192,16 +256,19 @@ void metrology_print_status(){
 		dp = metrology.dp_set;
 
         frequency = evaluate_mains_frequency();
-        P_active = *metrology.current.dot_prod[dp].P_active / metrology.current.dot_prod[dp].sample_count;
-        P_active >>= 9;
-        P_active = mul48_32_16_fast(P_active, 12826);
+        V_rms = evaluate_rms_voltage(dp);
+        I_rms = evaluate_rms_current(dp);
+        P_active = evaluate_active_power(dp);
+        p_apparent = mul64u_32_32(V_rms, I_rms) / 1000000;	//uA x mV / 1000000 = mW
 
-        printf("Samples= %i\n", metrology.dot_prod[dp].sample_count);
-        printf("P_active = %r\n", P_active);
-        //printf("Freq = %u\n", frequency);
-        printf("VRMS^2= %r\n", *((uint64_t*) metrology.dot_prod[dp].V_sq) & 0xffffffffffff);	//Only 48bit
-        //printf("VSample= %i\n", metrology.last_V_sample);
-        printf("IRMS^2= %r\n", *((uint64_t*) metrology.current.dot_prod[dp].I_sq));
+
+
+//        printf("Samples= %i\n", metrology.dot_prod[dp].sample_count);
+        printf("Freq = %u\n", frequency);
+        printf("VRMS = %n\n", V_rms);
+        printf("IRMS= %n\n", I_rms);
+        printf("P_active   = %n\n", P_active);
+        printf("P_apparent = %n\n", p_apparent);
 
         memset(&metrology.dot_prod[dp], 0, sizeof(metrology.dot_prod[0]));
         memset(&metrology.current.dot_prod[dp], 0, sizeof(metrology.current.dot_prod[0]));
@@ -255,7 +322,8 @@ static __inline__ int per_sample_dsp(void)
 
 	sqac48_16_fast(phase_dot_products->V_sq, V_sample);	//Accumulate and square product			8us
 	sqac64_24_fast(sensor_dot_products->I_sq, I_sample);//Accumulate and square product			12us
-	mac64_16_24_fast(sensor_dot_products->P_active, V_sample, I_sample);//						11us
+	//mac64_16_24_fast(sensor_dot_products->P_active, V_sample, I_sample);//						11us
+	mac64_16_24(sensor_dot_products->P_active, V_sample, I_sample);//
 
 	phase_dot_products->sample_count++;
 	sensor_dot_products->sample_count++;

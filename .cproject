@@ -33,6 +33,7 @@
 								<option id="gnu.c.compiler.option.misc.other.715836015" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -mmcu=msp430i2041 -fno-builtin-printf -fno-builtin-puts -fno-builtin-putc -Winline" valueType="string"/>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1316948956" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__MSP430i2041__"/>
+									<listOptionValue builtIn="false" value="_GNU_ASSEMBLER_"/>
 								</option>
 								<option id="gnu.c.compiler.option.warnings.allwarn.1282513499" name="All warnings (-Wall)" superClass="gnu.c.compiler.option.warnings.allwarn" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="gnu.c.compiler.option.preprocessor.nostdinc.1298778586" name="Do not search system directories (-nostdinc)" superClass="gnu.c.compiler.option.preprocessor.nostdinc" useByScannerDiscovery="false" value="false" valueType="boolean"/>
@@ -63,6 +64,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.969586255" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.587201941" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
 							<tool command="as" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.tool.gnu.cross.assembler.1070587372" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<option id="gnu.both.asm.option.flags.306782353" name="Assembler flags" superClass="gnu.both.asm.option.flags" value="-mmcu=msp430i2041 -Wall -g -c" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.165506482" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
